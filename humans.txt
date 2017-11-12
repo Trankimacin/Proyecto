@@ -7,4 +7,4 @@
 
 	Last Update:
 	Standars: HTML5, CSS3, JavaScript, PHP
-	Software: Sublime Text, Apache, MySql, MAMP, GitHub
+	Software: Sublime Text, PhpStorm, WebStorm, IntelliJ IDEA, GitHub
