@@ -1,0 +1,10 @@
+/* TEAM */
+
+	Developer: Víctor Ramón Pardo
+	Location: Madrid, Madrid, Spain
+
+/* SITE */
+
+	Last Update:
+	Standars: HTML5, CSS3, JavaScript, PHP
+	Software: Sublime Text, Apache, MySql, MAMP, GitHub
