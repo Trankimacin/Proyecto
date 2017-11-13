@@ -10,17 +10,19 @@
 		$cod_usuario = $_GET['usuario'];
 		$usuario     = $_SESSION['usuario'];
 		
-		$consulta    = "SELECT * FROM usuarios WHERE usuario=$usuario;";
+		$consulta    = "SELECT cod_usuario FROM usuarios WHERE usuario='$usuario';";
 		
 		$resultado   = mysqli_query($conexion, $consulta);
 
-			if($){
-				echo ("<h2>No te puedes borrar a ti mismo</h2>");
+		$dato = mysqli_fetch_assoc($resultado);
+
+			if($dato['cod_usuario']==$cod_usuario){
+				echo ("<h2>No puedes borrar el usuario con el que estas logeado</h2>");
 			}else{
 
-				$consulta = "DELETE FROM usuarios WHERE cod_usuario=$cod_usuario;";
+				$consulta2 = "DELETE FROM usuarios WHERE cod_usuario=$cod_usuario;";
 
-				$resultado = mysqli_query($consulta);
+				$resultado2 = mysqli_query($conexion, $consulta2);
 
 				if(mysqli_errno($conexion)==0){
 					echo ("<h2>El usuario se ha borrado correctamente</h2>");
