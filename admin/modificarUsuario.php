@@ -8,10 +8,10 @@
 	if(isset($_POST['cod_usuario'])){
 
 		$cod_usuario = $_POST['cod_usuario'];
-		$usuario = $_POST['usuario'];
+		$user = $_POST['user'];
 		$pass1 = $_POST['pass_1'];
 
-		$consulta = "UPDATE usuarios SET usuario='$usuario', pass='$pass1' WHERE cod_usuario=$cod_usuario;";
+		$consulta = "UPDATE usuarios SET usuario='$user', pass='$pass1' WHERE cod_usuario=$cod_usuario;";
 
 		mysqli_query($conexion, $consulta);
 
@@ -45,7 +45,7 @@
 
 				echo ("
 					<input type='hidden' name='cod_usuario' value='".$dato['cod_usuario']."'>
-					<p><input type='text' name='usuario' value='".$dato['usuario']."'></p>
+					<p><input type='text' name='user' value='".$dato['usuario']."'></p>
 					<p><input type='password' id='pass_1' name='pass_1'></p>
 					<p><input type='password' id='pass_2' name='pass_2'></p>
 				");
@@ -55,7 +55,7 @@
 				</form>
 				");
 		}
-	}
+	}else{
 
 		$consulta = "SELECT * FROM usuarios ORDER BY usuario;";
 		$resultado = mysqli_query($conexion, $consulta);
@@ -78,6 +78,7 @@
 				<input type='submit' value='Modificar'/>
 			</form>
 		");
+	}
 
 
 ?>
