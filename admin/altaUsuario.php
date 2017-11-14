@@ -27,9 +27,9 @@
   
   <h2 class="login-header">Registrar nuevo usuario</h2>
 
-  <form name="formulario" action="altaUsuario.php" method="post" onsubmit="validar()">
+  <form name="formulario" action="altaUsuario.php" method="post" onsubmit="validar(event)">
     <p><input type="text" placeholder="Usuario" name="usuario"></p>
     <p><input type="password" id="pass_1" placeholder="Password" name="pass_1"></p>
     <p><input type="password" id="pass_2" placeholder="Password" name="pass_2"></p>
-    <p><input type="submit" value="Registrar" name="enviar_btn"></p>
+    <p><input type="submit" value="Registrar"></p>
   </form>

@@ -33,7 +33,7 @@
 		echo ("
 			<h2>Modifica usuario y/o contraseña</h2>
 
-			<form name='formulario' action='modificarUsuario.php' method='post' onsubmit='validar()'>
+			<form name='formulario' action='modificarUsuario.php' method='post' onsubmit='validar(event)'>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
