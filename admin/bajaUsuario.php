@@ -1,13 +1,18 @@
 <?php
 
-	require_once("sesion.php");
-	require_once("caducidad.php");
+	//require_once("sesion.php");
+	//require_once("caducidad.php");
 	include_once("menu.php");
 	require_once("conexion.php");
 
-	if(isset($_GET['usuario'])){
+	if(isset($_POST['usuario'])){
 
-		$cod_usuario = $_GET['usuario'];
+		$cod_usuario = $_POST['usuario'];
+
+		if($cod_usuario=='vacio'){
+			echo ("<h2>Selecciona un usuario de la lista</h2>");
+		}else{
+
 		$usuario     = $_SESSION['usuario'];
 		
 		$consulta    = "SELECT cod_usuario FROM usuarios WHERE usuario='$usuario';";
@@ -30,17 +35,19 @@
 					echo ("<h2>El usuario no se ha podido borrar</h2>");
 				}
 			}
+		}
 	}
 
-	$consulta = "SELECT * FROM usuarios;";
+	$consulta = "SELECT * FROM usuarios ORDER BY usuario;";
 
 	$resultado = mysqli_query($conexion, $consulta);
 
 	echo ("<h2>Selecciona un usuario para ser borrado</h1>");
 
 	echo("
-	<form action='bajaUsuario.php' method='get'>
+	<form action='bajaUsuario.php' method='post'>
 		<select name='usuario'>
+			<option value='vacio' selected>Selecciona un usuario</option>
 	");
 		while ($dato=mysqli_fetch_array($resultado)){
 			echo("<option value='".$dato['cod_usuario']."'>".$dato['usuario']."</option>");
