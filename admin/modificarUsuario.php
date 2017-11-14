@@ -8,8 +8,8 @@
 	if(isset($_POST['cod_usuario'])){
 
 		$cod_usuario = $_POST['cod_usuario'];
-		$user = $_POST['user'];
-		$pass1 = $_POST['pass_1'];
+		$user        = $_POST['user'];
+		$pass1       = $_POST['pass_1'];
 
 		$consulta = "UPDATE usuarios SET usuario='$user', pass='$pass1' WHERE cod_usuario=$cod_usuario;";
 
@@ -32,7 +32,7 @@
 			echo ("<h2>Selecciona un usuario de la lista</h2>");
 		}else{
 
-			$consulta = "SELECT * FROM usuarios WHERE cod_usuario='$cod_usuario';";
+			$consulta  = "SELECT * FROM usuarios WHERE cod_usuario='$cod_usuario';";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			echo ("
@@ -57,7 +57,7 @@
 		}
 	}else{
 
-		$consulta = "SELECT * FROM usuarios ORDER BY usuario;";
+		$consulta  = "SELECT * FROM usuarios ORDER BY usuario;";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("

@@ -26,8 +26,9 @@
 
 
 <form action="altaAutores.php" method="post">
-	<p><input type="text" name="nombre" placeholder="Nombre del autor" required pattern="[a-zA-Z\s]{1-25}" title="Solo letras en el nombre"></p>
+	<p><input type="text" name="nombre" placeholder="Nombre del autor" required pattern="[a-zA-Z]{1,25}" title="Solo letras en el nombre"></p>
 	<p><input type="text" name="apellidos" placeholder="Apellidos del autor" required pattern="[a-zA-Z\s]+" title="Solo letras en los apellidos"></p>
 	<p><input type="submit" value="Añadir">
 		<input type="reset" value="Borrar"></p>
 </form>
+
