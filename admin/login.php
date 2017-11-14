@@ -5,7 +5,6 @@
 </head>
 <body>
 
-
 	<form action="validacion.php" method="post">
 	<label>Usuario:</label>
 	<input type="text" name="usuario_txt" placeholder="Usuario" required />

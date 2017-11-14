@@ -54,6 +54,6 @@
 		}
 	echo ("
 		</select>
-		<input type='submit' value='Borrar' />
+		<input type='submit' value='Borrar' onclick='return confirm(\"¿Seguro que quiere borrarlo?\")/>
 	</form>
 	");

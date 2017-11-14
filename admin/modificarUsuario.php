@@ -51,7 +51,7 @@
 				");
 			}
 				echo ("
-					<input type='submit' value='Modificar'>
+					<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
 				</form>
 				");
 		}
