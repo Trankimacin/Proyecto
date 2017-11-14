@@ -14,21 +14,28 @@
 		$destino = '../media/img/portadas/' .$_FILES['archivo']['name'];
 		$nombre = $_FILES['archivo']['name'];
 
-		if(move_uploaded_file($archivo, $destino)){
-			$numero = $_POST['numero'];
-			$fecha = $_POST['fecha'];
+		$info = getimagesize($_FILES['archivo']['tmp_name']);
 
-			$consulta = "INSERT INTO revistas(numero, fecha, portada, publicada) VALUES (numero, '$fecha', '$nombre', '0');";
+		if (($info[2] !== IMAGETYPE_GIF) && ($info[2] !== IMAGETYPE_JPEG) && ($info[2] !== IMAGETYPE_PNG)) {
+  			echo ("<h2>Solo se admiten lo siguientes archivos: .gif / .jpeg / .png");
+  		}else{
 
-			mysqli_query($conexion, $consulta);
+			if(move_uploaded_file($archivo, $destino)){
+				$numero = $_POST['numero'];
+				$fecha = $_POST['fecha'];
 
-			if(mysqli_errno($conexion)==0){
-				echo ("<h2>Revista agregada correctamente</h2>");
+				$consulta = "INSERT INTO revistas(numero, fecha, portada, publicada) VALUES (numero, '$fecha', '$nombre', '0');";
+
+				mysqli_query($conexion, $consulta);
+
+				if(mysqli_errno($conexion)==0){
+					echo ("<h2>Revista agregada correctamente</h2>");
+				}else{
+					echo ("<h2>No se pudo insertar la revista</h2>");
+				}
 			}else{
-				echo ("<h2>No se pudo insertar la revista</h2>");
+				echo ("<h2>No se ha podido hacer la inserción</h2>");
 			}
-		}else{
-			echo ("<h2>No se ha podido hacer la inserción</h2>");
 		}
 	}
 
