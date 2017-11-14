@@ -30,3 +30,15 @@ function validacion(){
 		}
 	}
 }
+
+function validar(){
+	var pass1 = document.getElementById("pass_1").value;
+	var pass2 = document.getElementById("pass_2").value;
+	if(pass1!=8){
+		alert("La contraseña debe tener 8 caracteres");
+	}else if(pass1!=pass2){
+		alert("Las contraseñas no coinciden");
+	} else {
+		document.formulario.submit();
+	}
+}

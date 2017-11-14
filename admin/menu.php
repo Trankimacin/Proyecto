@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+<script src="../js/estilos.js"></script>
 
 <nav id='menu'>
 	<input type='checkbox'/>
