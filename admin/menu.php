@@ -20,7 +20,13 @@
 				<li><a href='bajaUsuario.php'>Eliminar Articulo</a></li>
 			</ul>
 		</li>
-		
+		<li><a class='prett' href="#">Autores</a>
+			<ul class='menus'>
+				<li><a href="altaAutores.php">Alta Autor</a></li>
+				<li><a href="modificarAutores.php">Modificar Autor</a></li>
+				<li><a href="bajaAutores.php">Eliminar Autor</a></li>
+			</ul>
+		</li>
 		<li><a class='prett' href='#'>Usuarios</a>
 			<ul class='menus'>
 				<li><a href='altaUsuario.php'>Alta Usuario</a></li>
