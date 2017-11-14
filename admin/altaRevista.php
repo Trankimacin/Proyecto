@@ -39,7 +39,7 @@
 	<form name="revista" action="altaRevista.php" method="post" enctype="multipart/form-data">
 		<p><input type="number" placeholder="Número de revista" name="numero" required></p>
 		<p><input type="text" id="fecha" title="Formato: DD/MM/AAAA" placeholder="Fecha" name="fecha" required></p>
-		<p><input type="file" name="archivo"></p>
+		<p><input type="file" name="archivo" style="color: transparent;"></p>
 		<p><input type="submit" value="Enviar">
 		<input type="reset" value="Borrar"></p>
 	</form>
