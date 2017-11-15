@@ -9,7 +9,7 @@
 
 		$info = getimagesize($_FILES['archivo']['tmp_name']);
 
-		if (($info[2] !== IMAGETYPE_GIF) && ($info[2] !== IMAGETYPE_JPEG) && ($info[2] !== IMAGETYPE_PNG)) {
+		if (($info[2] !== IMAGETYPE_GIF) && ($info[2] !== IMAGETYPE_JPEG) && ($info[2] !== IMAGETYPE_PNG) && $_FILES['archivo']['size']<=1048576) {
   			echo ("<h2>Solo se admiten lo siguientes archivos: .gif / .jpeg / .png");
 		}else{
 			$archivo = $_FILES['archivo']['tmp_name'];
