@@ -5,23 +5,18 @@
 	include_once("menu.php");
 	require_once("conexion.php");
 
-	if(isset($_POST['revista'])){
+	if(isset($_POST['desplegable'])){
 
-		$cod_revista = $_POST['revista'];
+		$cod_revista = $_POST['desplegable'];
 
-		if($cod_revista=='vacio'){
-			echo ("<h2>Selecciona un revista de la lista</h2>");
+		$consulta2 = "DELETE FROM revistas WHERE cod_revista=$cod_revista;";
+
+		$resultado2 = mysqli_query($conexion, $consulta2);
+
+		if(mysqli_errno($conexion)==0){
+			echo ("<h2>La revista se ha borrado correctamente</h2>");
 		}else{
-
-			$consulta2 = "DELETE FROM revistas WHERE cod_revista=$cod_revista;";
-
-			$resultado2 = mysqli_query($conexion, $consulta2);
-
-			if(mysqli_errno($conexion)==0){
-				echo ("<h2>La revista se ha borrado correctamente</h2>");
-			}else{
-				echo ("<h2>La revista no se ha podido borrar</h2>");
-			}
+			echo ("<h2>La revista no se ha podido borrar</h2>");
 		}
 	}
 
@@ -32,8 +27,8 @@
 	echo ("<h2>Selecciona un revista para ser borrada</h1>");
 
 	echo("
-	<form action='bajaRevista.php' method='post'>
-		<select name='revista'>
+	<form name='modifica' action='bajaRevista.php' method='post'>
+		<select name='desplegable'>
 			<option value='vacio' selected>Selecciona un revista</option>
 	");
 		while ($dato=mysqli_fetch_array($resultado)){
@@ -41,7 +36,7 @@
 		}
 	echo ("
 		</select>
-		<input type='submit' value='Borrar' onclick='return confirm(\"¿Seguro que quiere borrarlo?\")'/>
+		<input type='button' value='Borrar' onclick='return seleccionado();'/>
 	</form>
 	");
 
