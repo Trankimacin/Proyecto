@@ -24,6 +24,7 @@
 
 ?>
 
+<h2>Añadir un nuevo autor</h2>
 
 <form action="altaAutores.php" method="post">
 	<p><input type="text" name="nombre" placeholder="Nombre del autor" required pattern="[a-zA-Z]{1,25}" title="Solo letras en el nombre"></p>
