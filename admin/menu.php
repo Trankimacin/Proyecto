@@ -4,7 +4,7 @@
 
 <nav id='menu'>
 	<input type='checkbox'/>
-	<label>&#8801;<span>Navigation</span></label>
+	<label>&#8801;<span>Navegación</span></label>
 	<ul>
 		<li><a class='prett' href='#'>Revistas</a>
 			<ul class='menus'>
