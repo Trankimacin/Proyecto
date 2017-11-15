@@ -33,7 +33,7 @@
 
 				$archivo = $_FILES['archivo']['tmp_name'];
 				$destino = '../media/img/portadas/' .$_FILES['archivo']['name'];
-				$nombre = $_FILES['archivo']['name'];
+				$nombre  = $_FILES['archivo']['name'];
 
 				if(move_uploaded_file($archivo, $destino)){
 					$cod_revista = $_POST['cod_revista'];
@@ -115,7 +115,7 @@
 
 		while($dato=mysqli_fetch_array($resultado)){
 				echo ("
-					<option value='".$dato['cod_revista']."'>".$dato['numero']." ".$dato['fecha']." ".$dato['portada']."</option>
+					<option value='".$dato['cod_revista']."'>Revista: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
 				");
 		}
 		echo ("
