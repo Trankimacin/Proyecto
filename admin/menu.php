@@ -17,7 +17,7 @@
 			<ul class='menus'>
 				<li><a href='altaArticulos.php'>Alta Articulo</a></li>
 				<li><a href='modificarArticulos.php'>Modificar Articulo</a></li>
-				<li><a href='bajaUsuario.php'>Eliminar Articulo</a></li>
+				<li><a href='bajaArticulos.php'>Eliminar Articulo</a></li>
 			</ul>
 		</li>
 		<li><a class='prett' href="#">Autores</a>
