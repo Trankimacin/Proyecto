@@ -50,10 +50,3 @@
 		<p><input type="submit" value="Enviar">
 		<input type="reset" value="Borrar"></p>
 	</form>
-
-	<script type="text/javascript">
-		var input = document.getElementById('fecha');
-		input.oninvalid = function(event) {
-  		  event.target.setCustomValidity('Formato válido: DD/MM/AAAA');
-		}
-	</script>
