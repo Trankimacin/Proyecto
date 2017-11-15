@@ -44,3 +44,11 @@ function validar(e){
 		document.formulario.submit();
 	}
 }
+
+function seleccionado(){
+	if (document.modifica.desplegable.value=="vacio"){
+		alert ("Debes seleccionar uno de la lista");
+	}else{
+		document.modifica.submit();
+	}
+}
