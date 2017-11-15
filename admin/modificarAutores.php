@@ -24,43 +24,38 @@
 	}
 
 
-	if(isset($_POST['autor'])){
+	if(isset($_POST['desplegable'])){
 
-		$cod_autor = $_POST['autor'];
+		$cod_autor = $_POST['desplegable'];
 
-		if($cod_autor=='vacio'){
-			echo ("<h2>Selecciona un autor de la lista</h2>");
-		}else{
-			
-			$consulta  = "SELECT * FROM autores WHERE cod_autor='$cod_autor';";
-			$resultado = mysqli_query($conexion, $consulta);
+		$consulta  = "SELECT * FROM autores WHERE cod_autor='$cod_autor';";
+		$resultado = mysqli_query($conexion, $consulta);
 
+		echo ("
+			<h2>Modifica el autor</h2>
+
+			<form name='modificaAutor' action='modificarAutores.php' method='post'>
+		");
+
+		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
-				<h2>Modifica el autor</h2>
-
-				<form name='modificaAutor' action='modificarAutores.php' method='post'>
+				<input type='hidden' name='cod_autor' value='".$dato['cod_autor']."'>
+				<p><input type='text' name='nombre' value='".$dato['nombre']."' required pattern='[a-zA-Z]{1,25}' title='Solo letras en el nombre'></p>
+				<p><input type='text' name='apellidos' value='".$dato['apellidos']."' required pattern='[a-zA-Z\s]+' title='Solo letras en los apellidos'></p>
 			");
-
-			while($dato=mysqli_fetch_array($resultado)){
-				echo ("
-					<input type='hidden' name='cod_autor' value='".$dato['cod_autor']."'>
-					<p><input type='text' name='nombre' value='".$dato['nombre']."' required pattern='[a-zA-Z]{1,25}' title='Solo letras en el nombre'></p>
-					<p><input type='text' name='apellidos' value='".$dato['apellidos']."' required pattern='[a-zA-Z\s]+' title='Solo letras en los apellidos'></p>
-				");
-			}
-				echo ("
-					<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
-				</form>
-				");
 		}
+			echo ("
+				<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
+			</form>
+			");
 	}else{
 		$consulta  = "SELECT * FROM autores ORDER BY nombre, apellidos;";
 		$resultado = mysqli_query($conexion, $consulta);
 		
 		echo ("
 			<h2>Selecciona un autor para modificar</h2>
-			<form name='modifcarAutor' action='modificarAutores.php' method='post'>
-				<select name='autor'>
+			<form name='modifica' action='modificarAutores.php' method='post'>
+				<select name='desplegable'>
 					<option value='vacio' selected>Selecciona un autor</option>
 		");
 
@@ -72,7 +67,7 @@
 
 		echo ("
 				</select>
-				<input type='submit' value='Modificar'/>
+				<input type='button' value='Modificar' onclick='return seleccionado();'/>
 			</form>
 		");
 	}
