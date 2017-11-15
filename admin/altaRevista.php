@@ -24,7 +24,7 @@
 				$numero = $_POST['numero'];
 				$fecha = $_POST['fecha'];
 
-				$consulta = "INSERT INTO revistas(numero, fecha, portada, publicada) VALUES (numero, '$fecha', '$nombre', '0');";
+				$consulta = "INSERT INTO revistas(numero, fecha, portada, publicada) VALUES ('$numero', '$fecha', '$nombre', 0);";
 
 				mysqli_query($conexion, $consulta);
 
