@@ -85,7 +85,12 @@
 				<input type='text' name='portada' value='".$dato['portada']."' readonly></p>
 				<p><label>Nueva portada</label>
 				<input type='file' name='archivo' style='color: transparent;'></p>
-				<p><label>Públicar</label></p>
+				<div class='bloque'><label>Publicar:
+					<div class='tooltip'><img src='../media/icon/info.png'>
+						<span class='tooltiptext'>Cambiar a SI cuando se quiera publicar</span>
+					</div>
+				</div>
+				</label></p>
 				<p><input type='radio' name='publicada' value='0' checked>No
 				<input type='radio' name='publicada' value='1'>Si</p>
 
