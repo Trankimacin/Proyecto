@@ -66,8 +66,6 @@
 
 			$cod_imagen = $resultado['cod_imagen'];
 
-			echo ($cod_imagen);
-
 			$update = "UPDATE articulos SET cod_imagen='$cod_imagen' WHERE titulo='$titulo';";
 
 			mysqli_query($conexion, $update);
