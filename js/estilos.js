@@ -52,3 +52,14 @@ function seleccionado(){
 		document.modifica.submit();
 	}
 }
+
+function selec(){
+	if (document.altaAutor.autor.value=="vacio"){
+		alert ("Debes seleccionar un autor de la lista");
+	}else if
+		(document.altaAutor.archivo.value.length==0){
+		alert ("Debes seleccionar un archivo para el articulo");
+	}else{
+		document.altaAutor.submit();
+	}
+}

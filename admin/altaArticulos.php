@@ -79,7 +79,7 @@
 
 	<h2>Añadir un nuevo articulo</h2>
 
-	<form action="altaArticulos.php" method="post" enctype="multipart/form-data">
+	<form name="altaAutor" action="altaArticulos.php" method="post" enctype="multipart/form-data">
 		<p><input type="text" name="titulo" placeholder="Título" required></p>
 		<p><textarea maxlength="250" cols="40" rows="6" name="entradilla" placeholder="Entradilla"  required></textarea></p>
 		<p><textarea cols="40" rows="6" name="texto" placeholder="Texto articulo" required></textarea></p>
@@ -118,6 +118,6 @@
 ?>
 		<p><label>Imagen:</label>
 		<input type="file" name="archivo" style="color: transparent;"></p>
-		<p><input type="submit" value="Añadir">
+		<p><input type="button" value="Añadir" onclick="return selec();">
 			<input type="reset" value="Borrar"></p>
 	</form>

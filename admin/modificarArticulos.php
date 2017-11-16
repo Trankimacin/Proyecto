@@ -23,9 +23,6 @@
 				<textarea cols='40' rows='6' name='entradilla' naxlength='250''>".$dato['entradilla']."</textarea></p>
 				<p><label>Texto: </label>
 				<textarea cols='40' rows='6' name='texto'>".$dato['texto']."</textarea></p>
-				<p><label>Título: </label>
-				<input type='text' name='titulo' value='".$dato['titulo']."' readonly></p>
-				
 			");
 		}
 
