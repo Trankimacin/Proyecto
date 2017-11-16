@@ -68,6 +68,16 @@
 
 		$cod_articulo = $_POST['desplegable'];
 
+		echo ("
+			<div class='bloque'>
+			<h2>Introduce los datos que quieras cambiar</h2>
+			<div class='tooltip'>
+			<img src='../media/icon/info.png'>
+			<span class='tooltiptext'>Los campos en blanco no los actualizará</span>
+			</div>
+			</div>	
+		");
+
 		echo ("<form name='modificar' action='modificarArticulos.php' method='post' enctype='multipart/form-data'>
 			<input type='hidden' name='articulo' value='$cod_articulo'>
 		");
