@@ -34,7 +34,7 @@
 				if(mysqli_errno($conexion)!=0){
 					echo ("<h2>No se pudo hacer inserción</h2>");
 				}else{
-					echo ("<h2>Todo bien</h2>");
+					echo ("<h2>Se añadió un nuevo articulo</h2>");
 				}
 
 				if(isset($_POST['autor'])){
