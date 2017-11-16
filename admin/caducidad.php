@@ -1,9 +1,15 @@
 <?php
 
-if (($_SESSION['hora']+1200)<time()){
+session_start();
+	if(!($_SESSION["logueado"])){
+		header("Location:salir.php");
+	}else{
 
-	session_destroy();
+		if (($_SESSION['hora']+1200)<time()){
 
-	header("Location:login.php?mensaje=caducada");
-}
+			session_destroy();
+
+			header("Location:login.php?mensaje=caducada");
+		}
+	}
 ?>
