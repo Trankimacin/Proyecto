@@ -71,3 +71,14 @@ function subido(){
 		document.revista.submit();
 	}
 }
+
+function checkOption(obj) {
+    var input = document.getElementsByName("nombre");
+    var input2 = document.getElementsByName("apellidos");
+    for(var i=0; i < input.length; i++) {
+     input[i].disabled = !(obj.value == "vacio")
+    }
+    for(var i=0; i < input2.length; i++) {
+     input2[i].disabled = !(obj.value == "vacio")
+    }
+}
