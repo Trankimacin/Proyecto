@@ -20,57 +20,53 @@
 				$consulta = "INSERT INTO imagenes(ruta) VALUES ('$nombre');";
 				mysqli_query($conexion, $consulta);
 			}
-		}
-	}
+			if(isset($_POST['revista'])){
 
-	if(isset($_POST['revista'])){
+				$titulo      = $_POST['titulo'];
+				$entradilla  = $_POST['entradilla'];
+				$texto       = $_POST['texto'];
+				$cod_revista = $_POST['revista'];
 
-		$titulo      = $_POST['titulo'];
-		$entradilla  = $_POST['entradilla'];
-		$texto       = $_POST['texto'];
-		$cod_revista = $_POST['revista'];
-
-		$consulta = "INSERT INTO articulos(titulo, entradilla, texto, cod_revista) VALUES ('$titulo', '$entradilla', '$texto', '$cod_revista');";
-
-		mysqli_query($conexion, $consulta);
-
-		if(mysqli_errno($conexion)!=0){
-			echo ("<h2>No se pudo hacer inserción</h2>");
-		}else{
-			echo ("<h2>Todo bien</h2>");
-		}
-
-		if(isset($_POST['autor'])){
-
-			$cod_autor = $_POST['autor'];
-
-			if($cod_autor!='vacio'){
-
-				$consulta = "UPDATE articulos SET cod_autor='$cod_autor' WHERE titulo='$titulo';";
+				$consulta = "INSERT INTO articulos(titulo, entradilla, texto, cod_revista) VALUES ('$titulo', '$entradilla', '$texto', '$cod_revista');";
 
 				mysqli_query($conexion, $consulta);
 
 				if(mysqli_errno($conexion)!=0){
-					echo ("<h2>No se pudo hacer la inserción</h2>");
+					echo ("<h2>No se pudo hacer inserción</h2>");
+				}else{
+					echo ("<h2>Todo bien</h2>");
 				}
+
+				if(isset($_POST['autor'])){
+
+					$cod_autor = $_POST['autor'];
+
+					$consulta = "UPDATE articulos SET cod_autor='$cod_autor' WHERE titulo='$titulo';";
+
+					mysqli_query($conexion, $consulta);
+
+					if(mysqli_errno($conexion)!=0){
+						echo ("<h2>No se pudo hacer la inserción</h2>");
+					}
+				}
+
+				if(!empty($_FILES['archivo']['name'])){
+
+					$consulta = "SELECT cod_imagen FROM imagenes WHERE ruta='$nombre';";
+
+					$resultado = mysqli_query($conexion, $consulta);
+
+					$resultado = mysqli_fetch_assoc($resultado);
+
+					$cod_imagen = $resultado['cod_imagen'];
+
+					$update = "UPDATE articulos SET cod_imagen='$cod_imagen' WHERE titulo='$titulo';";
+
+					mysqli_query($conexion, $update);
+				}
+
 			}
 		}
-
-		if(!empty($_FILES['archivo']['name'])){
-
-			$consulta = "SELECT cod_imagen FROM imagenes WHERE ruta='$nombre';";
-
-			$resultado = mysqli_query($conexion, $consulta);
-
-			$resultado = mysqli_fetch_assoc($resultado);
-
-			$cod_imagen = $resultado['cod_imagen'];
-
-			$update = "UPDATE articulos SET cod_imagen='$cod_imagen' WHERE titulo='$titulo';";
-
-			mysqli_query($conexion, $update);
-		}
-
 	}
 
 ?>
