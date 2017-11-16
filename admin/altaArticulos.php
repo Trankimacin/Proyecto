@@ -94,7 +94,7 @@
 		");
 ?>
 		<p><label>Autor:</label>
-			<select name="autor">
+			<select name="autor" id="autor" onChange="checkOption(this)">
 				<option value='vacio'>Sin autor</option>
 <?php
 	$consulta = "SELECT * FROM autores ORDER BY nombre, apellidos;";
@@ -110,6 +110,7 @@
 			</select></p>
 		");
 ?>
+		<p><input type="text" name="nombre" placeholder="Nombre Autor"><input type="text" name="apellidos" placeholder="Apellidos"></p>
 		<p><label>Imagen:</label>
 		<input type="file" name="archivo" style="color: transparent;"></p>
 		<p><input type="button" value="Añadir" onclick="return selec();">
