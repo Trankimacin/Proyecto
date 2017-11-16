@@ -63,3 +63,11 @@ function selec(){
 		document.altaAutor.submit();
 	}
 }
+
+function subido(){
+	if (document.revista.archivo.value.length==0){
+		alert ("Debes seleccionar un archivo para la portada");
+	}else{
+		document.revista.submit();
+	}
+}

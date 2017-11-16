@@ -47,6 +47,6 @@
 		<p><input type="number" placeholder="Número de revista" name="numero" required></p>
 		<p><input type="text" id="fecha" placeholder="Fecha" name="fecha" required></p>
 		<p><input type="file" name="archivo" style="color: transparent;"></p>
-		<p><input type="submit" value="Enviar">
+		<p><input type="button" value="Enviar" onclick="return subido();">
 		<input type="reset" value="Borrar"></p>
 	</form>
