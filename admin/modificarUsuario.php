@@ -42,8 +42,8 @@
 			echo ("
 				<input type='hidden' name='cod_usuario' value='".$dato['cod_usuario']."'>
 				<p><input type='text' name='user' value='".$dato['usuario']."'></p>
-				<p><input type='password' id='pass_1' name='pass_1'></p>
-				<p><input type='password' id='pass_2' name='pass_2'></p>
+				<p><input type='password' id='pass_1' placeholder='Contraseña' name='pass_1'></p>
+				<p><input type='password' id='pass_2' placeholder='Contraseña' name='pass_2'></p>
 			");
 		}
 			echo ("
