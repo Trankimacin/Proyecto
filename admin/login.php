@@ -2,30 +2,40 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/estilos.css">
 	<title></title>
 </head>
 <body>
-
 	<?php
 
 	if(isset($_GET['m'])){
 		if($_GET['m']=='w'){
-			echo ("<h2>Introduce un usuario y/o contraseña valida</h2>");
+			echo ("<div class='error-msg'>
+					<i class='fa fa-times-circle'></i>
+					Usuario y/o contraseña no valida
+					</div>");
 		}else if($_GET['m']=='e'){
-			echo ("<h2>La sesión ha finalizado</h2>");
+			echo ("<div class='warning-msg'>
+					<i class='fa fa-warning'></i>
+					La sesión ha caducado
+					</div>");
 		}
 	}
 
 	?>
 
-	<form action="validacion.php" method="post">
-	<label>Usuario:</label>
-	<input type="text" name="usuario_txt" placeholder="Usuario" required />
-	<label>Password:</label>
-	<input type="password" name="pass_txt" placeholder="Contraseña" required />
-	<input type="submit" value="Enviar" name="enviar_btn" />
-	<input type="reset" value="Borrar" />
-	</form>
+
+<form action="validacion.php" method="post">
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="usuario_txt" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass_txt" required>
+        
+    <input type="submit" name="enviar_btn" value="Login">
+  </div>
+</form>
 
 </body>
 </html>
