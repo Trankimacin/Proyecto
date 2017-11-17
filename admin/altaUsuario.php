@@ -1,7 +1,7 @@
 <?php
 
 	//require_once("sesion.php");
-	//require_once("caducidad.php");
+	require_once("caducidad.php");
 	include_once("menu.php");
 
 	if(isset($_POST['usuario'])){
