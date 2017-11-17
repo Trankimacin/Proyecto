@@ -32,30 +32,31 @@
 
 ?>
   
-  <h2 class="login-header">Registrar nuevo usuario</h2>
+  <h2 class="medio">Registrar nuevo usuario</h2>
 
-  <form name="formulario" action="altaUsuario.php" method="post" onsubmit="validar(event)">
-	<div class="bloque">
-	  	<input type="text" placeholder="Usuario" name="usuario">
-	    	<div class="tooltip">
-	    		<i class="fa fa-question"></i>
-	    			<span class="tooltiptext">Introduce un correo</span>
-	    	</div>
-    </div>
-    <div class="bloque">
-	    <input type="password" id="pass_1" placeholder="Password" name="pass_1">
-	    	<div class="tooltip">
-	    		<i class="fa fa-question"></i>
-	    			<span class="tooltiptext">Introduce una contraseña</span>
-	    	</div>
-    </div>
-    <div class="bloque">
-		<input type="password" id="pass_2" placeholder="Password" name="pass_2">
+	<form name="formulario" action="altaUsuario.php" method="post" onsubmit="validar(event)">
+		<div class="container">
+			<label>Usuario</label>
+		    	<div class="tooltip">
+		    		<i class="fa fa-question"></i>
+		    			<span class="tooltiptext">Introduce un correo</span>
+		    	</div>
+		  	<input type="text" placeholder="Usuario" name="usuario">
+
+			<label>Password</label>
+				<div class="tooltip">
+		    		<i class="fa fa-question"></i>
+		    			<span class="tooltiptext">Introduce una contraseña</span>
+		    	</div>
+		    <input type="password" id="pass_1" placeholder="Password" name="pass_1">
+		    	
+			<label>Password</label>
 			<div class="tooltip">
-				<i class="fa fa-question"></i>
-					<span class="tooltiptext">Repite contraseña</span>
-			</div>
-	</div>
-	</div>
-    <p><input type="submit" value="Registrar"></p>
-  </form>
+					<i class="fa fa-question"></i>
+						<span class="tooltiptext">Repite contraseña</span>
+				</div>
+			<input type="password" id="pass_2" placeholder="Password" name="pass_2">
+				
+			<input type="submit" value="Registrar">
+		</div>
+ 	</form>

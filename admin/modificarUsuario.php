@@ -39,7 +39,7 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2>Modifica usuario y/o contraseña</h2>
+			<h2 class='medio'>Modifica usuario y/o contraseña</h2>
 
 			<form name='formulario' action='modificarUsuario.php' method='post' onsubmit='validar(event)'>
 		");
@@ -47,14 +47,23 @@
 		while($dato=mysqli_fetch_array($resultado)){
 
 			echo ("
+			<div class='container'>
 				<input type='hidden' name='cod_usuario' value='".$dato['cod_usuario']."'>
-				<p><input type='text' name='user' value='".$dato['usuario']."'></p>
-				<p><input type='password' id='pass_1' placeholder='Contraseña' name='pass_1'></p>
-				<p><input type='password' id='pass_2' placeholder='Contraseña' name='pass_2'></p>
+				<label>Usuario</label>
+				<input type='text' name='user' value='".$dato['usuario']."'>
+				<label>Password</label>
+				<input type='password' id='pass_1' placeholder='Contraseña' name='pass_1'>
+				<label>Password</label>
+				<div class='tooltip'>
+					<i class='fa fa-question'></i>
+					<span class='tooltiptext'>Debe coincidir la contraseña</span>
+				</div>
+				<input type='password' id='pass_2' placeholder='Contraseña' name='pass_2'>
 			");
 		}
 			echo ("
 				<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
+			</div>
 			</form>
 			");
 	}else{

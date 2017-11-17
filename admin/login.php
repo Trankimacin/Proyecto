@@ -27,10 +27,10 @@
 
 <form action="validacion.php" method="post">
   <div class="container">
-    <label><b>Username</b></label>
+    <label>Usuario</label>
     <input type="text" placeholder="Enter Username" name="usuario_txt" required>
 
-    <label><b>Password</b></label>
+    <label>Password</label>
     <input type="password" placeholder="Enter Password" name="pass_txt" required>
         
     <input type="submit" name="enviar_btn" value="Login">
