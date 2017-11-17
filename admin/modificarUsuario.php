@@ -1,7 +1,7 @@
 <?php
 
 	//require_once("sesion.php");
-	//require_once("caducidad.php");
+	require_once("caducidad.php");
 	require_once("conexion.php");
 	include_once("menu.php");
 

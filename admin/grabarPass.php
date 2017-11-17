@@ -1,6 +1,6 @@
 <?php
 
-	require_once("sesion.php");
+	//require_once("sesion.php");
 	require_once("caducidad.php");
 
 		$pass = $_POST['pass_1'];

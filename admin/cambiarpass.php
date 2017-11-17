@@ -1,5 +1,5 @@
 <?php
-require_once("sesion.php");
+//require_once("sesion.php");
 require_once("caducidad.php");
 ?>
 <script>
