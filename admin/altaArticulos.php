@@ -22,25 +22,31 @@
 				$cod_imagen=mysqli_insert_id($conexion);
 			}
 
-			if(isset($_POST['autor'])=='vacio'){
-				$cod_autor=$_POST['autor'];
-			}else{
+			if(isset($_POST['nombre'])){
+
 				$nombre2 = $_POST['nombre'];
 				$apellidos = $_POST['apellidos'];
+
+				$consulta = "INSERT INTO autores(nombre, apellidos) VALUES ('$nombre2', '$apellidos');";
+
+				mysqli_query($conexion, $consulta);
+
+				$cod_autor = mysqli_insert_id($conexion);
+
+			}else{
+
+				$cod_autor = $_POST['autor'];
+
 			}
 			
 			if(isset($_POST['revista'])){
-
-				echo ($cod_autor);
-
-				echo ($nombre2);
 
 				$titulo      = $_POST['titulo'];
 				$entradilla  = $_POST['entradilla'];
 				$texto       = $_POST['texto'];
 				$cod_revista = $_POST['revista'];
 
-				$consulta = "INSERT INTO articulos(titulo, entradilla, texto, cod_revista, cod_imagen) VALUES ('$titulo', '$entradilla', '$texto', '$cod_revista', '$cod_imagen');";
+				$consulta = "INSERT INTO articulos(titulo, entradilla, texto, cod_revista, cod_autor, cod_imagen) VALUES ('$titulo', '$entradilla', '$texto', '$cod_revista', '$cod_autor', '$cod_imagen');";
 
 				mysqli_query($conexion, $consulta);
 
@@ -48,21 +54,6 @@
 					echo ("<h2>No se pudo hacer inserción</h2>");
 				}else{
 					echo ("<h2>Se añadió un nuevo articulo</h2>");
-				}
-
-				if(!empty($_FILES['archivo']['name'])){
-
-					$consulta = "SELECT cod_imagen FROM imagenes WHERE ruta='$nombre';";
-
-					$resultado = mysqli_query($conexion, $consulta);
-
-					$resultado = mysqli_fetch_assoc($resultado);
-
-					$cod_imagen = $resultado['cod_imagen'];
-
-					$update = "UPDATE articulos SET cod_imagen='$cod_imagen' WHERE titulo='$titulo';";
-
-					mysqli_query($conexion, $update);
 				}
 
 			}
@@ -73,7 +64,7 @@
 
 	<h2>Añadir un nuevo articulo</h2>
 
-	<form name="altaAutor" action="altaArticulos.php" method="post" enctype="multipart/form-data">
+	<form name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data">
 		<p><input type="text" name="titulo" placeholder="Título" required></p>
 		<p><textarea maxlength="250" cols="40" rows="6" name="entradilla" placeholder="Entradilla"  required></textarea></p>
 		<p><textarea cols="40" rows="6" name="texto" placeholder="Texto articulo" required></textarea></p>
@@ -113,6 +104,6 @@
 		<p><input type="text" name="nombre" placeholder="Nombre Autor"><input type="text" name="apellidos" placeholder="Apellidos"></p>
 		<p><label>Imagen:</label>
 		<input type="file" name="archivo" style="color: transparent;"></p>
-		<p><input type="submit" value="Añadir">
+		<p><input type="button" value="Añadir" onclick="return subido();">
 			<input type="reset" value="Borrar"></p>
 	</form>
