@@ -33,7 +33,7 @@
 			}
 		} else {
 
-			header("Location:login.php?mensaje=error");
+			header("Location:login.php?m=w");
 		}
 
 	}else{
