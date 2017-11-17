@@ -16,9 +16,16 @@
 		mysqli_query($conexion, $consulta);
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<h2>Usuario introducido correctamente</h2>");
+			echo ("<div class='success-msg'>
+					<i class='fa fa-check'></i>
+					Se ha añadido correctamente
+					</div>
+			");
 		}else{
-			echo ("<h2>No se ha podido introducir el usuario</h2>");
+			echo ("<div class='error-msg'>
+					<i class='fa fa-times-circle'></i>
+					No se pudo añadir
+					</div>");
 		}
 
 	}
@@ -31,21 +38,21 @@
 	<div class="bloque">
 	  	<input type="text" placeholder="Usuario" name="usuario">
 	    	<div class="tooltip">
-	    		<img src="../media/icon/info.png">
+	    		<i class="fa fa-question"></i>
 	    			<span class="tooltiptext">Introduce un correo</span>
 	    	</div>
     </div>
     <div class="bloque">
 	    <input type="password" id="pass_1" placeholder="Password" name="pass_1">
 	    	<div class="tooltip">
-	    		<img src="../media/icon/info.png">
+	    		<i class="fa fa-question"></i>
 	    			<span class="tooltiptext">Introduce una contraseña</span>
 	    	</div>
     </div>
     <div class="bloque">
 		<input type="password" id="pass_2" placeholder="Password" name="pass_2">
 			<div class="tooltip">
-				<img src="../media/icon/info.png">
+				<i class="fa fa-question"></i>
 					<span class="tooltiptext">Repite contraseña</span>
 			</div>
 	</div>
