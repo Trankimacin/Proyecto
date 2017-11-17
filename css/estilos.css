@@ -1,3 +1,5 @@
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
 /* MENU */
 nav#menu{display: flex; flex-direction: row; justify-content: center; align-items: center;}
 #menu{background:#464646;color:#eee;height:35px;}
@@ -19,7 +21,7 @@ nav#menu{display: flex; flex-direction: row; justify-content: center; align-item
 #menu a.prett::after{content:"";width:0;height:0;border-width:6px 5px;border-style:solid;border-color:#eee transparent transparent transparent;position:absolute;top:15px;right:9px}
 #menu ul.menus a:hover{background:#BABABA;}
 #menu a.trigger2::after{content:"";width:0;height:0;border-width:5px 6px;border-style:solid;border-color:transparent transparent transparent #eee ;position:absolute;top:13px;right:9px}
-
+/* MENU RESPONSIVE */
 @media screen and (max-width: 600px){
 #menu{position:relative}
 #menu ul{background:#838383;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;}
@@ -52,36 +54,15 @@ fieldset{border:medium none!important;margin:0 0 10px;min-width:100%;padding:0;w
 #contact button[type="submit"]:active{box-shadow:inset 0 1px 3px rgba(0,0,0,0.5)}
 #contact input:focus,#contact textarea:focus{outline:0;border:1px solid #999}
 
-/* Clases */
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 170px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-	top: -5px;
-	left: 105%;
-    
-    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-    opacity: 0;
-    transition: opacity 2s;
-}
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-.bloque {
-	display: block;
-	margin-bottom: 15px;
-}
-.bloque h2{
-    display: inline;
-}
+/* TOOLTIP */
+.tooltip{position:relative;display:inline-block;color:#01A9DB}
+.tooltip .tooltiptext{visibility:hidden;width:170px;background-color:#000;color:#fff;text-align:center;border-radius:6px;padding:5px 0;position:absolute;z-index:1;top:-5px;left:105%;opacity:0;transition:opacity 2s}
+.tooltip:hover .tooltiptext{visibility:visible;opacity:1}
+.bloque{display:block;margin-bottom:15px}
+.bloque h2{display:inline}
+
+/* MENSAJES DE ERROR Y SUCCESS */
+
+.success-msg,.error-msg{margin:10px 0;padding:10px;border-radius:3px 3px 3px 3px}
+.success-msg{color:#270;background-color:#DFF2BF}
+.error-msg{color:#D8000C;background-color:#FFBABA}
