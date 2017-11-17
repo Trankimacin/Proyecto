@@ -31,12 +31,15 @@
 
 ?>
 
-<h2>Añadir un nuevo autor</h2>
+<h2 class="medio">Añadir un nuevo autor</h2>
 
 <form action="altaAutores.php" method="post">
-	<p><input type="text" name="nombre" placeholder="Nombre del autor" required pattern="[a-zA-Z]{1,25}" title="Solo letras en el nombre"></p>
-	<p><input type="text" name="apellidos" placeholder="Apellidos del autor" required pattern="[a-zA-Z\s]+" title="Solo letras en los apellidos"></p>
-	<p><input type="submit" value="Añadir">
-		<input type="reset" value="Borrar"></p>
+	<div class="container">
+		<label>Nombre</label>
+		<input type="text" name="nombre" placeholder="Nombre del autor" required pattern="[a-zA-Z]{1,25}" title="Solo letras en el nombre">
+		<label>Apellidos</label>
+		<input type="text" name="apellidos" placeholder="Apellidos del autor" required pattern="[a-zA-Z\s]+" title="Solo letras en los apellidos">
+		<input type="submit" value="Añadir">
+	</div>
 </form>
 

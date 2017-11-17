@@ -25,7 +25,8 @@
 			echo ("<div class='error-msg'>
 					<i class='fa fa-times-circle'></i>
 					No se pudo modificar
-					</div>");
+					</div>
+			");
 		}
 
 	}
@@ -39,20 +40,24 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2>Modifica el autor</h2>
+			<h2 class='medio'>Modifica el autor</h2>
 
 			<form name='modificaAutor' action='modificarAutores.php' method='post'>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
+			<div class='container'>
 				<input type='hidden' name='cod_autor' value='".$dato['cod_autor']."'>
-				<p><input type='text' name='nombre' value='".$dato['nombre']."' required pattern='[a-zA-Z]{1,25}' title='Solo letras en el nombre'></p>
-				<p><input type='text' name='apellidos' value='".$dato['apellidos']."' required pattern='[a-zA-Z\s]+' title='Solo letras en los apellidos'></p>
+				<label>Nombre</label>
+				<input type='text' name='nombre' value='".$dato['nombre']."' required pattern='[a-zA-Z]{1,25}' title='Solo letras en el nombre'>
+				<label>Apellidos</label>
+				<input type='text' name='apellidos' value='".$dato['apellidos']."' required pattern='[a-zA-Z\s]+' title='Solo letras en los apellidos'>
 			");
 		}
 			echo ("
 				<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
+			</div>
 			</form>
 			");
 	}else{

@@ -15,6 +15,7 @@ require_once("caducidad.php");
 	}
 
 </script>
+<link rel="stylesheet" href="../css/estilos.css">
 
 <?php
 
@@ -25,6 +26,7 @@ require_once("caducidad.php");
 	echo ("
 
 	<form name='cambiar_frm' action='grabarPass.php' method='post' enctype='application/x-www-form-urlencoded'>
+		<div class='container'>
     	<label>Introduzca nueva contraseña: </label>
         <input type='password' name='pass_1' required autofocus placeholder='Introducir 8 caracteres' /><br /><br />
 
@@ -33,6 +35,7 @@ require_once("caducidad.php");
 
 		<input type='button' name='enviar_btn' value='Enviar' onclick='validar();' />
 		<input type='reset' value='Borrar' />
+		</div>
 	</form>
 
 	");
