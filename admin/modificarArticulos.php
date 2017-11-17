@@ -58,9 +58,16 @@
 		}
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<h2>Actualizado correctamente el articulo");
+			echo ("<div class='success-msg'>
+					<i class='fa fa-check'></i>
+					Se ha modificado correctamente
+					</div>
+			");
 		}else{
-			echo ("<h2>No se pudo actualizar el articulo</h2>");
+			echo ("<div class='error-msg'>
+					<i class='fa fa-times-circle'></i>
+					No se pudo modificar
+					</div>");
 		}
 	}
 

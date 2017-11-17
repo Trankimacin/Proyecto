@@ -18,9 +18,16 @@
 			mysqli_query($conexion, $consulta);
 
 			if(mysqli_errno($conexion)==0){
-				echo ("<h2>Revista actualizada correctamente</h2>");
+				echo ("<div class='success-msg'>
+						<i class='fa fa-check'></i>
+						Se ha modificado correctamente
+						</div>
+				");
 			}else{
-				echo ("<h2>La revista no se pudo actualizar</h2>");
+				echo ("<div class='error-msg'>
+						<i class='fa fa-times-circle'></i>
+						No se pudo modificar
+						</div>");
 			}
 
 		}else{
@@ -46,11 +53,17 @@
 					mysqli_query($conexion, $consulta);
 
 					if(mysqli_errno($conexion)==0){
-						echo ("<h2>Revista actualizada correctamente</h2>");
-					}else {
-						echo ("<h2>La revista no se pudo actualizar</h2>");
+						echo ("<div class='success-msg'>
+								<i class='fa fa-check'></i>
+								Se ha modificado correctamente
+								</div>
+						");
+					}else{
+						echo ("<div class='error-msg'>
+								<i class='fa fa-times-circle'></i>
+								No se pudo modificar
+								</div>");
 					}
-
 				}else{
 					echo ("<h2>No se pudo hacer la modificación</h2>");
 				}

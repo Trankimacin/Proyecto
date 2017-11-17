@@ -50,10 +50,17 @@
 
 				mysqli_query($conexion, $consulta);
 
-				if(mysqli_errno($conexion)!=0){
-					echo ("<h2>No se pudo hacer inserción</h2>");
+				if(mysqli_errno($conexion)==0){
+					echo ("<div class='success-msg'>
+							<i class='fa fa-check'></i>
+							Se ha añadido correctamente
+							</div>
+					");
 				}else{
-					echo ("<h2>Se añadió un nuevo articulo</h2>");
+					echo ("<div class='error-msg'>
+							<i class='fa fa-times-circle'></i>
+							No se pudo añadir
+							</div>");
 				}
 
 			}

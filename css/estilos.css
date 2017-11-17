@@ -48,6 +48,7 @@ nav#menu{display: flex; flex-direction: row; justify-content: center; align-item
 
 /* MENSAJES DE ERROR Y SUCCESS */
 
-.success-msg,.error-msg{margin:10px 0;padding:10px;border-radius:3px 3px 3px 3px}
+.success-msg,.error-msg,.warning-msg{margin:10px 0;padding:10px;border-radius:3px 3px 3px 3px}
 .success-msg{color:#270;background-color:#DFF2BF}
 .error-msg{color:#D8000C;background-color:#FFBABA}
+.warning-msg{color: #9F6000;background-color: #FEEFB3;}

@@ -16,9 +16,16 @@
 		mysqli_query($conexion, $consulta);
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<h2>Autor añadido correctamente</h2>");
+			echo ("<div class='success-msg'>
+					<i class='fa fa-check'></i>
+					Se ha añadido correctamente
+					</div>
+			");
 		}else{
-			echo ("<h2>El autor no se pudo añadir</h2>");
+			echo ("<div class='error-msg'>
+					<i class='fa fa-times-circle'></i>
+					No se pudo añadir
+					</div>");
 		}
 	}
 

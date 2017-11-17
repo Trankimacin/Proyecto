@@ -14,11 +14,18 @@
 		$consulta = "UPDATE autores SET nombre='$nombre', apellidos='$apellidos' WHERE cod_autor='$cod_autor';";
 
 		mysqli_query($conexion, $consulta);
-
+		
 		if(mysqli_errno($conexion)==0){
-			echo ("<h2>Autor modificador correctamente</h2>");
+			echo ("<div class='success-msg'>
+					<i class='fa fa-check'></i>
+					Se ha modificado correctamente
+					</div>
+			");
 		}else{
-			echo ("<h2>No se pudo modificar el autor</h2>");
+			echo ("<div class='error-msg'>
+					<i class='fa fa-times-circle'></i>
+					No se pudo modificar
+					</div>");
 		}
 
 	}

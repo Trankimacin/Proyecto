@@ -12,7 +12,7 @@
 
 		$archivo = $_FILES['archivo']['tmp_name'];
 		$destino = '../media/img/portadas/' .$_FILES['archivo']['name'];
-		$nombre = $_FILES['archivo']['name'];
+		$nombre  = $_FILES['archivo']['name'];
 
 		$info = getimagesize($_FILES['archivo']['tmp_name']);
 
@@ -22,16 +22,23 @@
 
 			if(move_uploaded_file($archivo, $destino)){
 				$numero = $_POST['numero'];
-				$fecha = $_POST['fecha'];
+				$fecha  = $_POST['fecha'];
 
 				$consulta = "INSERT INTO revistas(numero, fecha, portada, publicada) VALUES ('$numero', '$fecha', '$nombre', 0);";
 
 				mysqli_query($conexion, $consulta);
 
 				if(mysqli_errno($conexion)==0){
-					echo ("<h2>Revista agregada correctamente</h2>");
+					echo ("<div class='success-msg'>
+							<i class='fa fa-check'></i>
+							Se ha añadido correctamente
+							</div>
+					");
 				}else{
-					echo ("<h2>No se pudo insertar la revista</h2>");
+					echo ("<div class='error-msg'>
+							<i class='fa fa-times-circle'></i>
+							No se pudo añadir
+							</div>");
 				}
 			}else{
 				echo ("<h2>No se ha podido hacer la inserción</h2>");

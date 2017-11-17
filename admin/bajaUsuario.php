@@ -18,7 +18,10 @@
 		$dato = mysqli_fetch_assoc($resultado);
 
 		if($dato['cod_usuario']==$cod_usuario){
-			echo ("<h2>No puedes borrar el usuario con el que estas logeado</h2>");
+			echo ("<div class='warning-msg'>
+						<i class='fa fa-warning'></i>
+						No puedes borrar el mismo usuario con el que estas logeado
+						</div>");
 		}else{
 
 			$consulta2 = "DELETE FROM usuarios WHERE cod_usuario=$cod_usuario;";
@@ -26,9 +29,16 @@
 			$resultado2 = mysqli_query($conexion, $consulta2);
 
 			if(mysqli_errno($conexion)==0){
-				echo ("<h2>El usuario se ha borrado correctamente</h2>");
+				echo ("<div class='success-msg'>
+						<i class='fa fa-check'></i>
+						Se ha borrado correctamente
+						</div>
+				");
 			}else{
-				echo ("<h2>El usuario no se ha podido borrar</h2>");
+				echo ("<div class='error-msg'>
+						<i class='fa fa-times-circle'></i>
+						No se pudo borrar
+						</div>");
 			}
 		}
 	}

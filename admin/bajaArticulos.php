@@ -14,9 +14,16 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<h2>El articulo se ha borrado correctamente</h2>");
+			echo ("<div class='success-msg'>
+					<i class='fa fa-check'></i>
+					Se ha borrado correctamente
+					</div>
+			");
 		}else{
-			echo ("<h2>El articulo no se ha podido borrar</h2>");
+			echo ("<div class='error-msg'>
+					<i class='fa fa-times-circle'></i>
+					No se pudo borrar
+					</div>");
 		}
 	}
 
