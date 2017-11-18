@@ -34,7 +34,7 @@
   
   <h2 class="medio">Registrar nuevo usuario</h2>
 
-	<form name="formulario" action="altaUsuario.php" method="post" onsubmit="validar(event)">
+	<form name="formulario" action="altaUsuario.php" method="post" onsubmit="return validar();">
 		<div class="container">
 			<label>Usuario</label>
 		    	<div class="tooltip">

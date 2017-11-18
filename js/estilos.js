@@ -31,18 +31,17 @@ function validacion(){
 	}
 }
 
-function validar(e){
+function validar(){
 	var pass1 = document.getElementById("pass_1").value;
 	var pass2 = document.getElementById("pass_2").value;
 	if(pass1.length < 8){
-		e.preventDefault();
 		alert("La contraseña debe tener 8 caracteres");
+		return false;
 	}else if(pass1!=pass2){
-		e.preventDefault();
 		alert("Las contraseñas no coinciden");
-	} else {
-		document.formulario.submit();
+		return false;
 	}
+	return true;
 }
 
 function seleccionado(){
