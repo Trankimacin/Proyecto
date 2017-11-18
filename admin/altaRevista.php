@@ -17,7 +17,9 @@
 		$info = getimagesize($_FILES['archivo']['tmp_name']);
 
 		if (($info[2] !== IMAGETYPE_GIF) && ($info[2] !== IMAGETYPE_JPEG) && ($info[2] !== IMAGETYPE_PNG) && $_FILES['archivo']['size']<=1048576) {
-  			echo ("<h2>Solo se admiten lo siguientes archivos: .gif / .jpeg / .png");
+  			echo ("<div class='warning-msg'>
+				<i class='fa fa-warning'></i>
+  				Solo se admiten lo siguientes archivos: .gif / .jpeg / .png</div>");
   		}else{
 
 			if(move_uploaded_file($archivo, $destino)){
@@ -48,12 +50,26 @@
 
 ?>
 
-	<h2>Añadir nueva revista</h2>
+<div class="wrapper">
 
-	<form name="revista" action="altaRevista.php" method="post" enctype="multipart/form-data">
-		<p><input type="number" placeholder="Número de revista" name="numero" required></p>
-		<p><input type="text" id="fecha" placeholder="Fecha" name="fecha" required></p>
-		<p><input type="file" name="archivo" style="color: transparent;"></p>
-		<p><input type="button" value="Enviar" onclick="return subido();">
-		<input type="reset" value="Borrar"></p>
+	<h2 id="account">Añadir nueva revista</h2>
+
+	<form name="revista" action="altaRevista.php" method="post" enctype="multipart/form-data" onsubmit="return subido()">
+	<div class="info">
+		<h3>Datos</h3>
+		<!--Número Revista-->
+		<label for="numero">Número de revista</label>
+			<input id="numero" type="number" name="numero" required>
+		<!--Fecha-->
+		<label for="fecha">Fecha de públicación</label>
+		<input id="fecha" type="text" id="fecha" required>
+		<!--Archivo-->
+		<label for="archivo">Portada</label>
+		<input id="archivo" type="file" name="archivo">
+		<div class="buttons">
+			<input type="submit" value="Añadir">
+			<input type="reset" value="Borrar">
+		</div>
+	</div>
 	</form>
+</div>

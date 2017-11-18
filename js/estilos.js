@@ -65,12 +65,14 @@ function selec(){
 }
 
 function subido(){
-	if (document.revista.archivo.value.length==0){
-		alert ("Debes seleccionar un archivo para la portada");
-	}else{
-		document.revista.submit();
+	var archivo = document.getElementById("archivo").value;
+	if (archivo.length==0){
+		alert ("Debes seleccionar una portada");
+		return false;
 	}
+	return true;
 }
+
 
 function checkOption(obj) {
     var input = document.getElementsByName("nombre");

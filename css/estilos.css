@@ -53,7 +53,7 @@ nav#menu{display: flex; flex-direction: row; justify-content: center; align-item
 .error-msg{color:#D8000C;background-color:#FFBABA}
 .warning-msg{color: #9F6000;background-color: #FEEFB3;}
 
-/* Formulario */
+/* Formulario logeo */
 
 form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
 .container input[type=text],.container input[type=password]{width:100%;padding:12px 20px;margin:8px 0;display:inline-block;border:1px solid #ccc;box-sizing:border-box}
@@ -63,6 +63,134 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
 .container label{font-weight: bold;}
 @media screen and (max-width: 700px) {
 	form > .container {width: 80%;}
+}
+
+/* Formulario general */
+
+.wrapper{
+  width:50%;
+  margin:40px auto;
+  background-color:white;
+  box-shadow:1px 1px 1px #212125;
+  border-radius:10px 10px 0px 0px;
+}
+.wrapper h3{
+  display:block;
+  background-color:#BDBDBD;
+  font-weight:bold;
+  margin:10px 0px;
+  padding: 5px 0px 5px 10px;
+}
+/*Form Styles*/
+.wrapper form{
+  width:95%;
+  margin:0 auto;
+}
+.wrapper form > div{
+  background-color:#F6F6F6;
+  margin-bottom:15px;
+  padding-bottom:15px;
+}
+/*Label Styles*/
+.wrapper label{
+  font-size:1.1em;
+  padding-top:10px;
+  width:30%;
+  padding-left:25px;
+  padding-right:10px;
+  text-align:right;
+  clear:both;
+  float:left;
+}
+/*Input fields + textarea + select*/
+.wrapper input[type="password"],
+.wrapper input[type="text"],
+.wrapper input[type="number"],
+.wrapper input[type="file"],.wrapper textarea,.wrapper select{
+  font-size:1.1em;
+  width:40%;
+  margin-top:5px;
+  padding-left: 5px;
+  outline:none;
+  border:0;
+  background-color:#F6F6F6;
+  border-bottom:1px solid #757575;
+  margin-bottom:2px;
+}
+.wrapper input[type="file"]{
+  color: transparent;
+}
+
+/*Buttons*/
+.buttons{
+  text-align:center;
+  padding-top:20px;
+}
+.wrapper input[type="submit"]{
+  margin-left:15px;
+}
+
+.wrapper input[type="submit"],.wrapper input[type="reset"]{
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    position: relative;
+    margin-bottom: .3125rem;
+    font-size: .875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    font-size:1.02rem;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    padding: 0.5rem 1.25rem;
+    vertical-align: middle;
+  
+}
+.wrapper input[type="submit"]{
+    background-color: #4caf50;
+    border-color: #4caf50;
+    box-shadow: none;
+}
+
+.wrapper input[type="reset"]{
+  background-color: #f44336;
+    border-color: #f44336;
+    box-shadow: none;
+}
+/*Fieldset*/
+.wrapper fieldset{
+  margin-top:20px;
+  width:40%;
+}
+.wrapper fieldset label{
+  font-size:80%;
+  float:none;
+  text-align: left;
+  vertical-align:text-top;
+  width:50%;
+  padding-left: 0px;
+  padding-top: 10px;
+}
+.wrapper fieldset input{
+  box-shadow:0px 0px 0px 0px #ccc;
+  width:10%;
+  -moz-box-shadow:    0px 0px 0px 0px #ccc;
+  -webkit-box-shadow: 0px 0px 0px 0px #ccc;
+  box-shadow:         0px 0px 0px 0px #ccc;
+}
+.wrapper fieldset input[type="radio"]{
+  float: left;
+}
+.empty {
+  color: #F6F6F6;
+}
+#account{
+  padding-left:2px;
 }
 
 .medio {text-align: center; color: #a5a5a5;}
