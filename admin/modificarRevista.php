@@ -87,6 +87,7 @@
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
+			$publicada = $dato['publicada'];
 
 			echo ("
 				<input type='hidden' name='cod_revista' value='".$dato['cod_revista']."'>
@@ -104,8 +105,11 @@
 					</div>
 				</div>
 				</label></p>
-				<p><input type='radio' name='publicada' value='0' checked>No
-				<input type='radio' name='publicada' value='1'>Si</p>
+				<p><input type='radio' name='publicada' value='0'");if($publicada==0){echo ("checked");}
+				echo ("
+				>No
+				<input type='radio' name='publicada' value='1'");if($publicada==1){echo ("checked");}
+				echo (">Si</p>
 
 			");
 		}
