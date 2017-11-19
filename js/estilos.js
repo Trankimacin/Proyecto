@@ -69,7 +69,6 @@ function subido(){
 		alert ("Debes seleccionar una portada");
 		return false;
 	}
-	return true;
 }
 
 

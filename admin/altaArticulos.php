@@ -73,7 +73,7 @@
 
 	<h2 id="account">Añadir un nuevo articulo</h2>
 
-	<form name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data">
+	<form name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
 		<div class="info">
 		<!-- Titutlo -->
 		<label for="titulo">Título</label>
@@ -142,7 +142,7 @@
 			<label for="apellidosAutor">Apellidos</label>
 			<input type="text" name="apellidos" id="apellidosAutor">
 				<div class="buttons">
-					<input type="button" value="Añadir" onclick="return subido();">
+					<input type="submit" value="Añadir">
 					<input type="reset" value="Borrar">
 				</div>
 		</div>
