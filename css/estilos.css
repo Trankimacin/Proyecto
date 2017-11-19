@@ -41,7 +41,7 @@ nav#menu{display: flex; flex-direction: row; justify-content: center; align-item
 
 /* TOOLTIP */
 .tooltip{position:relative;display:inline-block;color:#01A9DB}
-.tooltip .tooltiptext{visibility:hidden;width:170px;background-color:#000;color:#fff;text-align:center;border-radius:6px;padding:5px 0;position:absolute;z-index:1;top:-5px;left:105%;opacity:0;transition:opacity 2s}
+.tooltip .tooltiptext{visibility:hidden;width:170px;background-color:#000;color:#fff;text-align:center;border-radius:6px;padding:5px 0;position:absolute;z-index:1;top:-5px;left:105%;opacity:0;transition:opacity 2s;font-size: initial;}
 .tooltip:hover .tooltiptext{visibility:visible;opacity:1}
 .bloque{display:block;margin-bottom:15px}
 .bloque h2{display:inline}
