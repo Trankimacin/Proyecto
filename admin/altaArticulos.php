@@ -71,7 +71,12 @@
 
 	<div class="wrapper">
 
-	<h2 id="account">Añadir un nuevo articulo</h2>
+	<h2 id="account">Añadir un nuevo articulo
+		<div class="tooltip">
+			<i class="fa fa-question"></i>
+				<div class="tooltiptext">Primero deberás tener creada la revista</div>
+		</div>
+	</h2>
 
 	<form name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
 		<div class="info">
@@ -90,7 +95,7 @@
 		<label for="texto">Texto</label>
 		<textarea id="texto" name="texto" required></textarea>
 		<!-- Revista -->
-		<label for="revista">Revista:</label>
+		<label for="revista">Revista</label>
 			<select name="revista" id="revista">
 <?php
 	$consulta = "SELECT cod_revista, numero, fecha FROM revistas ORDER BY numero;";
@@ -107,7 +112,7 @@
 		");
 ?>
 		<!-- Autor -->
-		<label>Autor:</label>
+		<label>Autor</label>
 			<select name="autor" id="autor" onChange="checkOption(this)">
 				<option value='vacio'>Sin autor</option>
 <?php
