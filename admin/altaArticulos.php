@@ -24,7 +24,7 @@
 
 			if(isset($_POST['nombre'])){
 
-				$nombre2 = $_POST['nombre'];
+				$nombre2   = $_POST['nombre'];
 				$apellidos = $_POST['apellidos'];
 
 				$consulta = "INSERT INTO autores(nombre, apellidos) VALUES ('$nombre2', '$apellidos');";
@@ -69,14 +69,29 @@
 
 ?>
 
-	<h2>Añadir un nuevo articulo</h2>
+	<div class="wrapper">
+
+	<h2 id="account">Añadir un nuevo articulo</h2>
 
 	<form name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data">
-		<p><input type="text" name="titulo" placeholder="Título" required></p>
-		<p><textarea maxlength="250" cols="40" rows="6" name="entradilla" placeholder="Entradilla"  required></textarea></p>
-		<p><textarea cols="40" rows="6" name="texto" placeholder="Texto articulo" required></textarea></p>
-		<p><label>Revista:</label>
-			<select name="revista">
+		<div class="info">
+		<!-- Titutlo -->
+		<label for="titulo">Título</label>
+		<input type="text" id="titulo" name="titulo" required>
+		<!-- Entradilla -->
+		<label for="entradilla">Entradilla
+				<div class="tooltip">
+		    		<i class="fa fa-question"></i>
+		    			<span class="tooltiptext">Máximo 250 carácteres</span>
+		    	</div>
+		</label>
+		<textarea maxlength="250" id="entradilla" name="entradilla" required></textarea>
+		<!-- Texto -->
+		<label for="texto">Texto</label>
+		<textarea id="texto" name="texto" required></textarea>
+		<!-- Revista -->
+		<label for="revista">Revista:</label>
+			<select name="revista" id="revista">
 <?php
 	$consulta = "SELECT cod_revista, numero, fecha FROM revistas ORDER BY numero;";
 
@@ -88,10 +103,11 @@
 		");
 	}
 		echo ("
-			</select></p>
+			</select>
 		");
 ?>
-		<p><label>Autor:</label>
+		<!-- Autor -->
+		<label>Autor:</label>
 			<select name="autor" id="autor" onChange="checkOption(this)">
 				<option value='vacio'>Sin autor</option>
 <?php
@@ -105,12 +121,30 @@
 		");
 	}
 		echo("
-			</select></p>
+			</select>
 		");
 ?>
-		<p><input type="text" name="nombre" placeholder="Nombre Autor"><input type="text" name="apellidos" placeholder="Apellidos"></p>
-		<p><label>Imagen:</label>
-		<input type="file" name="archivo" style="color: transparent;"></p>
-		<p><input type="button" value="Añadir" onclick="return subido();">
-			<input type="reset" value="Borrar"></p>
+		<!-- Portada -->
+		<label for="archivo">Portada</label>
+		<input type="file" id="archivo" name="archivo">
+		<div class="attachements">
+			<h3>Nuevo autor
+				<div class="tooltip">
+		    		<i class="fa fa-question"></i>
+		    			<span class="tooltiptext">Si no hay seleccionado un autor, podrás añadirlo desde aquí</span>
+		    	</div>
+		    </h3>
+
+			<!-- Nombre Nuevo Autor -->
+			<label for="nuevoNombre">Nombre</label>
+			<input type="text" name="nombre" id="nuevoNombre">
+			<!-- Apellidos Nuevo Autor -->
+			<label for="apellidosAutor">Apellidos</label>
+			<input type="text" name="apellidos" id="apellidosAutor">
+				<div class="buttons">
+					<input type="button" value="Añadir" onclick="return subido();">
+					<input type="reset" value="Borrar">
+				</div>
+		</div>
+</div>		
 	</form>

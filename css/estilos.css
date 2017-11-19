@@ -81,7 +81,7 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
   margin:10px 0px;
   padding: 5px 0px 5px 10px;
 }
-/*Form Styles*/
+
 .wrapper form{
   width:95%;
   margin:0 auto;
@@ -91,7 +91,7 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
   margin-bottom:15px;
   padding-bottom:15px;
 }
-/*Label Styles*/
+
 .wrapper label{
   font-size:1.1em;
   padding-top:10px;
@@ -102,7 +102,7 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
   clear:both;
   float:left;
 }
-/*Input fields + textarea + select*/
+
 .wrapper input[type="password"],
 .wrapper input[type="text"],
 .wrapper input[type="number"],
@@ -121,16 +121,16 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
   color: transparent;
 }
 
-/*Buttons*/
 .buttons{
   text-align:center;
   padding-top:20px;
 }
-.wrapper input[type="submit"]{
+
+.wrapper input[type="submit"], .wrapper input[type="button"]{
   margin-left:15px;
 }
 
-.wrapper input[type="submit"],.wrapper input[type="reset"]{
+.wrapper input[type="submit"],.wrapper input[type="reset"], .wrapper input[type="button"]{
     color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     position: relative;
@@ -149,9 +149,9 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
     white-space: nowrap;
     padding: 0.5rem 1.25rem;
     vertical-align: middle;
-  
 }
-.wrapper input[type="submit"]{
+
+.wrapper input[type="submit"], .wrapper input[type="button"]{
     background-color: #4caf50;
     border-color: #4caf50;
     box-shadow: none;
@@ -162,35 +162,42 @@ form > .container{border:3px solid #f1f1f1;width:30%;margin:auto}
     border-color: #f44336;
     box-shadow: none;
 }
-/*Fieldset*/
+
 .wrapper fieldset{
   margin-top:20px;
-  width:40%;
+  width:35%;
 }
+
 .wrapper fieldset label{
   font-size:80%;
   float:none;
   text-align: left;
-  vertical-align:text-top;
+  vertical-align:middle;
   width:50%;
   padding-left: 0px;
   padding-top: 10px;
 }
+
 .wrapper fieldset input{
   box-shadow:0px 0px 0px 0px #ccc;
   width:10%;
   -moz-box-shadow:    0px 0px 0px 0px #ccc;
   -webkit-box-shadow: 0px 0px 0px 0px #ccc;
-  box-shadow:         0px 0px 0px 0px #ccc;
+  box-
+  shadow:         0px 0px 0px 0px #ccc;
 }
 .wrapper fieldset input[type="radio"]{
   float: left;
 }
+
 .empty {
   color: #F6F6F6;
 }
-#account{
-  padding-left:2px;
+
+#account {
+  padding-left: 2px;
 }
 
 .medio {text-align: center; color: #a5a5a5;}
+.bloque2 {display: block;clear: both;}
+.radio {display: inline-block;}

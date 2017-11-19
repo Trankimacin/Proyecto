@@ -81,9 +81,13 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2>Modifica la revista</h2>
+			<div class='wrapper'>
+
+			<h2 id='account'>Modificar revista</h2>
 
 			<form name='formulario' action='modificarRevista.php' method='post' enctype='multipart/form-data'>
+			<div class='info'>
+			<h3>Datos</h3>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
@@ -91,30 +95,41 @@
 
 			echo ("
 				<input type='hidden' name='cod_revista' value='".$dato['cod_revista']."'>
-				<p><label>Número de la revista</label>
-				<input type='number' name='numero' value='".$dato['numero']."'></p>
-				<p><label>Fecha: </label>
-				<input type='text' name='fecha' value='".$dato['fecha']."'></p>
-				<p><label>Portada: </label>
-				<input type='text' name='portada' value='".$dato['portada']."' readonly></p>
-				<p><label>Nueva portada</label>
-				<input type='file' name='archivo' style='color: transparent;'></p>
-				<div class='bloque'><label>Publicar:
-					<div class='tooltip'><img src='../media/icon/info.png'>
-						<span class='tooltiptext'>Cambiar a SI cuando se quiera publicar</span>
-					</div>
-				</div>
-				</label></p>
-				<p><input type='radio' name='publicada' value='0'");if($publicada==0){echo ("checked");}
+				<label for='numero'>Número de la revista</label>
+				<input type='number' id='numero' name='numero' value='".$dato['numero']."'>
+				<label id='fecha'>Fecha</label>
+				<input type='text' id='fecha' name='fecha' value='".$dato['fecha']."'>
+				<label>Portada</label>
+				<input type='text' name='portada' value='".$dato['portada']."' readonly>
+				<label for='nueva'>Nueva portada</label>
+				<input type='file' id='nueva' name='archivo'>
+				<label class='empty'>Publicada</label>
+				<fieldset>
+				<legend>Publicada</legend>
+				<span class='bloque2'>
+				<input type='radio' id='no' name='publicada' value='0'
+			");if($publicada==0){echo ("checked");}
 				echo ("
-				>No
-				<input type='radio' name='publicada' value='1'");if($publicada==1){echo ("checked");}
-				echo (">Si</p>
-
-			");
+				>
+				<span class='radio'></span>
+				<label for='no'>No</label>
+				</span>
+				<span class='bloque2'>
+				<input type='radio' id='si' name='publicada' value='1'
+				");if($publicada==1){echo ("checked");}
+				echo ("
+				>
+				<span class='radio'></span>
+				<label for='si'>Si</label>
+				</span>
+				</fieldset>
+				");
 		}
 			echo ("
-				<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
+				<div class='buttons'>
+				<input type='submit' value='modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'/>
+				</div>
+			</div>
 			</form>
 			");
 	}else{
