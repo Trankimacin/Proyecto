@@ -76,25 +76,35 @@
 		$cod_articulo = $_POST['desplegable'];
 
 		echo ("
-			<div class='bloque'>
-			<h2>Introduce los datos que quieras cambiar</h2>
-			<div class='tooltip'>
-			<img src='../media/icon/info.png'>
-			<span class='tooltiptext'>Los campos en blanco no los actualizará</span>
-			</div>
-			</div>	
+			<div class='wrapper'>
+
+			<h2 id='account'>Modificar articulo
+				<div class='tooltip'>
+					<i class='fa fa-question'></i>
+						<div class='tooltiptext'>Rellena solo los campos que quiera cambiar</div>
+				</div>
+			</h2>
 		");
 
 		echo ("<form name='modificar' action='modificarArticulos.php' method='post' enctype='multipart/form-data'>
+			<div class='info'>
 			<input type='hidden' name='articulo' value='$cod_articulo'>
 		");
 ?>
-		<p><input type="text" name="titulo" placeholder="Título"></p>
-		<p><textarea maxlength="250" cols="40" rows="6" name="entradilla" placeholder="Entradilla"></textarea></p>
-		<p><textarea cols="40" rows="6" name="texto" placeholder="Texto articulo"></textarea></p>
-		<p><label>Revista:</label>
+		<label for='titulo'>Título</label>
+		<input type="text" id="titulo" name="titulo">
+		<label for='entradilla'>Entradilla
+			<div class='tooltip'>
+				<i class='fa fa-question'></i>
+					<span class='tooltiptext'>Máximo 250 carácteres</span>
+			</div>
+		</label>
+		<textarea maxlength="250" id='entradilla' name="entradilla"></textarea>
+		<label for='texto'>Texto</label>
+		<textarea id='texto' name="texto"></textarea>
+		<label for="revista">Revista</label>
 			<select name="revista">
-				<option value="vacio">Seleciona una revista</option>
+				<option value="vacio" id="revista">Seleciona una revista</option>
 <?php
 	$consulta = "SELECT cod_revista, numero, fecha FROM revistas ORDER BY numero;";
 
@@ -109,8 +119,8 @@
 			</select></p>
 		");
 ?>
-		<p><label>Autor:</label>
-			<select name="autor">
+		<label for="autor">Autor</label>
+			<select name="autor" id="autor">
 				<option value='vacio'>Selecciona un autor</option>
 <?php
 	$consulta = "SELECT * FROM autores ORDER BY nombre, apellidos;";
@@ -126,10 +136,14 @@
 			</select></p>
 		");
 ?>
-		<p><label>Imagen:</label>
-		<input type="file" name="archivo" style="color: transparent;"></p>
-		<p><input type="submit" value="Modificar"">
-			<input type="reset" value="Borrar"></p>
+		<label for="imagen">Imagen</label>
+		<input type="file" id="imagen" name="archivo">
+		<div class="buttons">
+			<input type="submit" value="Modificar"">
+			<input type="reset" value="Borrar">
+		</div>
+	</div>
+</div>
 	</form>
 
 <?php
