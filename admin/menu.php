@@ -6,62 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/estilos.css">
 <script src="../js/estilos.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDropdownMenuLink">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown">
-          Revistas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="altaRevista.php">Alta Revista</a>
-          <a class="dropdown-item" href="modificarRevista.php">Modificar Revistar</a>
-          <a class="dropdown-item" href="bajaRevista.php">Elimiar Revista</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" >
-          Articulos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="altaArticulos.php">Alta Articulo</a>
-          <a class="dropdown-item" href="modificarArticulos.php">Modificar Articulo</a>
-          <a class="dropdown-item" href="bajaArticulos.php">Elimiar Articulo</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" >
-          Autores
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="altaAutor.php">Alta Autor</a>
-          <a class="dropdown-item" href="modificarAutor.php">Modificar Autor</a>
-          <a class="dropdown-item" href="bajaAutor.php">Elimiar Autor</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Usuarios
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="altaUsuario.php">Alta Usuario</a>
-          <a class="dropdown-item" href="modificarUsuario.php">Modificar Usuario</a>
-          <a class="dropdown-item" href="bajaUsuario.php">Eliminar Usuario</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="salir.php">Desconectarse</a>
-      </li>
-    </ul>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Revistas <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="altaRevista.php">Alta Revista</a></li>
+            <li><a href="modificarRevista.php">Modificar Revista</a></li>
+            <li><a href="bajaRevista.php">Eliminar Revista</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Autores <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="altaArticulo.php">Alta Artiuclo</a></li>
+            <li><a href="modificarArticulo.php">Modificar Articulo</a></li>
+            <li><a href="bajaArticulo.php">Eliminar Articulo</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Articulos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="altaAutor.php">Alta Autor</a></li>
+            <li><a href="modificarAutor.php">Modificar Autor</a></li>
+            <li><a href="bajaAutor.php">Eliminar Autor</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Usuarios <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="altaUsuario.php">Alta Usuario</a></li>
+            <li><a href="modificarUsuario.php">Modificar Usuario</a></li>
+            <li><a href="bajaUsuario.php">Eliminar Usuario</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="salir.php"><span class="glyphicon glyphicon-log-in"></span> Desconectarse</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
