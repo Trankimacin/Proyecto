@@ -16,16 +16,21 @@
 		mysqli_query($conexion, $consulta);
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<div class='success-msg'>
-					<i class='fa fa-check'></i>
+			echo ("
+				<div class='alert alert-success fade in'>
+					<a href='' class='close' data-dismiss='alert'>&times;</a>
+					<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
 					Se ha modificado correctamente
-					</div>
+				</div>
 			");
 		}else{
-			echo ("<div class='error-msg'>
-					<i class='fa fa-times-circle'></i>
-					No se pudo modificar
-					</div>");
+			echo ("
+				<div class='alert alert-danger fade in'>
+					<a href='' class='close' data-dismiss='alert'>&times;</a>
+					<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+					Se ha modificado correctamente
+				</div>
+			");
 		}
 
 	}
@@ -39,32 +44,46 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2 class='medio'>Modifica usuario y/o contraseña</h2>
-
-			<form name='formulario' action='modificarUsuario.php' method='post' onsubmit='validar(event)'>
+			<div class='modal-dialog'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<h4 class='modal-title'>Modifica usuario y/o contraseña</h4>
+					</div>
+					<div class='modal-body'>
+						<form name='formulario' action='modificarUsuario.php' method='post' onsubmit='validar()'>
+							<div class='form-group'>
+								<div class='input-group'>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
 
 			echo ("
-			<div class='container'>
-				<input type='hidden' name='cod_usuario' value='".$dato['cod_usuario']."'>
-				<label>Usuario</label>
-				<input type='text' name='user' value='".$dato['usuario']."'>
-				<label>Password</label>
-				<input type='password' id='pass_1' placeholder='Contraseña' name='pass_1'>
-				<label>Password</label>
-				<div class='tooltip'>
-					<i class='fa fa-question'></i>
-					<span class='tooltiptext'>Debe coincidir la contraseña</span>
-				</div>
-				<input type='password' id='pass_2' placeholder='Contraseña' name='pass_2'>
+									<input type='hidden' name='cod_usuario' value='".$dato['cod_usuario']."'>
+									<input type='text' name='user' id='user' class='form-control' value='".$dato['usuario']."'>
+									<label for='user' class='input-group-addon glyphicon glyphicon-user'></label>
+								</div>
+							</div>
+							<div class='form-group'>
+								<div class='input-group'>
+									<input type='password' id='pass_1' class='form-control' placeholder='Contraseña' name='pass_1'>
+									<label for='pass_1' class='input-group-addon glyphicon glyphicon-lock'></label>
+								</div>
+							</div>
+							<div class='form-group'>
+								<div class='input-group'>
+									<input type='password' id='pass_2' class='form-control' placeholder='Contraseña' name='pass_2'>
+									<label for='pass_2' class='input-group-addon glyphicon glyphicon-lock'></label>
+								</div>
+								<span id='helpBlock' class='help-block'>Deben coincidir las contraseñas</span>
+							</div>
 			");
 		}
 			echo ("
-				<input type='submit' value='Modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'>
+							<button class='form-control btn btn-warning'>Modificar</button>
+						</form>
+					</div>
+				</div>
 			</div>
-			</form>
 			");
 	}else{
 
@@ -72,22 +91,32 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2>Selecciona un usuario para modificar</h2>
-			<form name='modifica' action='modificarUsuario.php' method='post'>
-				<select name='desplegable'>
-					<option value='vacio' selected>Selecciona un usuario</option>
+			<div class='modal-dialog'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<h4 class='modal-title'>Selecciona un usuario para modificar</h4>
+					</div>
+					<div class='modal-body'>
+						<form action='modificarUsuario.php' method='post' onsubmit='return seleccionado();'>
+							<div class='form-group'>
+								<select id='selec' name='desplegable'>
+									<option value='vacio' selected>Selecciona un usuario</option>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
-				<option value='".$dato['cod_usuario']."'>".$dato['usuario']."</option>
+										<option value='".$dato['cod_usuario']."'>".$dato['usuario']."</option>
 			");
 		}
 
 		echo ("
-				</select>
-				<input type='button' value='Modificar' onclick='return seleccionado();'/>
-			</form>
+								</select>
+							</div>
+							<button class='form-control btn btn-primary'/>Modificar</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		");
 	}
 
