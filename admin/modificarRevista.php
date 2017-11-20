@@ -152,7 +152,7 @@
 		}
 		echo ("
 				</select>
-				<input type='button' value='Modificar' onclick='seleccionado();''>
+				<input type='button' value='Modificar' onclick='seleccionado();'>
 			</form>
 		");
 	}
