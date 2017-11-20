@@ -32,31 +32,34 @@
 
 ?>
   
-  <h2 class="medio">Registrar nuevo usuario</h2>
-
-	<form name="formulario" action="altaUsuario.php" method="post" onsubmit="return validar();">
-		<div class="container">
-			<label>Usuario</label>
-		    	<div class="tooltip">
-		    		<i class="fa fa-question"></i>
-		    			<span class="tooltiptext">Introduce un correo</span>
-		    	</div>
-		  	<input type="text" placeholder="Usuario" name="usuario">
-
-			<label>Password</label>
-				<div class="tooltip">
-		    		<i class="fa fa-question"></i>
-		    			<span class="tooltiptext">Introduce una contraseña</span>
-		    	</div>
-		    <input type="password" id="pass_1" placeholder="Password" name="pass_1">
-		    	
-			<label>Password</label>
-			<div class="tooltip">
-					<i class="fa fa-question"></i>
-						<span class="tooltiptext">Repite contraseña</span>
-				</div>
-			<input type="password" id="pass_2" placeholder="Password" name="pass_2">
-				
-			<input type="submit" value="Registrar">
-		</div>
- 	</form>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Añadir un usuario</h4>
+			</div><!-- Termina la cabecera -->
+			<div class="modal-body">
+				<form action="altaUsuario.php" method="post" onsubmit="return validar();">
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario"/>
+							<label for="usuario" class="input-group-addon glyphicon glyphicon-user"></label>
+						</div>
+					</div><!-- Termina el DIV de usuario-->
+					<div class="form-group">
+						<div class="input-group">
+							<input type="password" name="pass_1" class="form-control" id="pass_1" placeholder="Password"/>
+							<label for="pass_1" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>
+					</div><!-- Termina el DIV de la primera password-->
+					<div class="form-group">
+						<div class="input-group">
+							<input type="password" name="pass_2" class="form-control" id="pass_2" placeholder="Password"/>
+							<label for="pass_2" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>
+						<span id="helpBlock" class="help-block">Debe coincidir las contraseña</span>
+					</div><!--Termina el DIV de la segunda password-->
+					<button class="form-control btn btn-success">Registrar</button>
+				</form>
+			</div><!--Termina el body-->
+		</div><!--Termina el modal-content-->
+	</div><!--Termina el div para el formulario-->
