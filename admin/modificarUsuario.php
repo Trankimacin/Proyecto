@@ -44,15 +44,15 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<div class='modal-dialog'>
-				<div class='modal-content'>
-					<div class='modal-header'>
-						<h4 class='modal-title'>Modifica usuario y/o contraseña</h4>
-					</div>
-					<div class='modal-body'>
-						<form name='formulario' action='modificarUsuario.php' method='post' onsubmit='validar()'>
-							<div class='form-group'>
-								<div class='input-group'>
+				<div class='modal-dialog'>
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<h4 class='modal-title'>Selecciona una nueva contraseña</h4>
+						</div><!-- Termina la cabecera -->
+						<div class='modal-body'>
+							<form action='modificarUsuario.php' method='post' onsubmit='return validar();'>
+								<div class='form-group'>
+									<div class='input-group'>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
@@ -65,25 +65,25 @@
 							</div>
 							<div class='form-group'>
 								<div class='input-group'>
-									<input type='password' id='pass_1' class='form-control' placeholder='Contraseña' name='pass_1'>
+									<input type='password' name='pass_1' class='form-control' id='pass_1' placeholder='Password'/>
 									<label for='pass_1' class='input-group-addon glyphicon glyphicon-lock'></label>
 								</div>
-							</div>
+							</div><!-- Termina el DIV de la primera password-->
 							<div class='form-group'>
 								<div class='input-group'>
-									<input type='password' id='pass_2' class='form-control' placeholder='Contraseña' name='pass_2'>
+									<input type='password' name='pass_2' class='form-control' id='pass_2' placeholder='Password'/>
 									<label for='pass_2' class='input-group-addon glyphicon glyphicon-lock'></label>
 								</div>
 								<span id='helpBlock' class='help-block'>Deben coincidir las contraseñas</span>
-							</div>
+							</div><!--Termina el DIV de la segunda password-->
 			");
 		}
 			echo ("
 							<button class='form-control btn btn-warning'>Modificar</button>
 						</form>
-					</div>
-				</div>
-			</div>
+					</div><!--Termina el body-->
+				</div><!--Termina el modal-content-->
+			</div><!--Termina el div para el formulario-->
 			");
 	}else{
 

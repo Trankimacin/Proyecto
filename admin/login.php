@@ -12,15 +12,21 @@
 
 	if(isset($_GET['m'])){
 		if($_GET['m']=='w'){
-			echo ("<div class='error-msg'>
-					<i class='fa fa-times-circle'></i>
-					Usuario y/o contraseña no valida
-					</div>");
+			echo ("
+              <div class='alert alert-danger fade in'>
+                  <a href='' class='close' data-dismiss='alert'>&times;</a>
+                  <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+                  Usuario y/o Contraseña no valida
+              </div>
+        ");
 		}else if($_GET['m']=='e'){
-			echo ("<div class='warning-msg'>
-					<i class='fa fa-warning'></i>
-					La sesión ha caducado
-					</div>");
+			echo ("
+              <div class='alert alert-warning fade in'>
+                  <a href='' class='close' data-dismiss='alert'>&times;</a>
+                  <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>
+                  La sesión ha caducado por tiempo
+              </div>
+      ");
 		}
 	}
 

@@ -16,16 +16,21 @@
 		mysqli_query($conexion, $consulta);
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<div class='success-msg'>
-					<i class='fa fa-check'></i>
-					Se ha añadido correctamente
+			echo ("
+					<div class='alert alert-success fade in'>
+						<a href='' class='close' data-dismiss='alert'>&times;</a>
+						<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+						Se ha añadido correctamente
 					</div>
 			");
 		}else{
-			echo ("<div class='error-msg'>
-					<i class='fa fa-times-circle'></i>
-					No se pudo añadir
-					</div>");
+			echo ("
+					<div class='alert alert-danger fade in'>
+						<a href='' class='close' data-dismiss='alert'>&times;</a>
+						<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+						Se ha modificado correctamente
+					</div>
+			");
 		}
 
 	}
