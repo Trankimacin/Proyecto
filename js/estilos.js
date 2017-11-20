@@ -45,11 +45,12 @@ function validar(){
 }
 
 function seleccionado(){
-	if (document.modifica.desplegable.value=="vacio"){
+	var selec = document.getElementById('selec').value
+	if (selec=="vacio"){
 		alert ("Debes seleccionar uno de la lista");
-	}else{
-		document.modifica.submit();
+		return false;
 	}
+	return true;
 }
 
 function selec(){
