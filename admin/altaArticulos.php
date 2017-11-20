@@ -130,7 +130,7 @@
 		");
 ?>
 		<!-- Portada -->
-		<label for="archivo">Portada</label>
+		<label for="archivo">Imagen</label>
 		<input type="file" id="archivo" name="archivo">
 		<div class="attachements">
 			<h3>Nuevo autor
