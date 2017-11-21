@@ -88,9 +88,9 @@
 				</legend>
 					<input type='hidden' name='articulo' value='$cod_articulo'>
 				<div class='form-group'>
-					<label class='col-md-4 control-label' for='titulo'>Título</label>
+					<label class='col-md-4 control-label' for='titulo'>Titulo</label>
 					<div class='col-md-4'>
-					<input type='text' id='titulo' name='titulo'>
+						<input id='titulo' name='titulo' type='text' class='form-control input-md'>
 					</div>
 				</div>
 				<div class='form-group'>
@@ -131,6 +131,7 @@
 						<select class='control-form' name='autor' id='autor'>
 							<option value='vacio'>Selecciona un autor</option>
 			");
+		
 	mysqli_free_result($consulta);
 
 	$consulta = "SELECT * FROM autores ORDER BY nombre, apellidos;";

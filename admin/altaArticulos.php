@@ -69,34 +69,42 @@
 
 ?>
 
-	<div class="wrapper">
+	<form class="form-horizontal" name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
+		<fieldset>
+			<legend>Añadir nuevo articulo
+				<a href='#' data-trigger='focus' data-toggle='popover' class='glyphicon glyphicon-cog'></a>
+			</legend>
 
-	<h2 id="account">Añadir un nuevo articulo
-		<div class="tooltip">
-			<i class="fa fa-question"></i>
-				<div class="tooltiptext">Primero deberás tener creada la revista</div>
-		</div>
-	</h2>
-
-	<form name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
-		<div class="info">
 		<!-- Titutlo -->
-		<label for="titulo">Título</label>
-		<input type="text" id="titulo" name="titulo" required>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="titulo">Título</label>
+			<div class="col-md-4">
+				<input type="text" id="titulo" name="titulo" class="form-control input-md" required>
+			</div>
+		</div>
+
 		<!-- Entradilla -->
-		<label for="entradilla">Entradilla
-				<div class="tooltip">
-		    		<i class="fa fa-question"></i>
-		    			<span class="tooltiptext">Máximo 250 carácteres</span>
-		    	</div>
-		</label>
-		<textarea maxlength="250" id="entradilla" name="entradilla" required></textarea>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="entradilla">Entradilla</label>
+			<div class="col-md-4">
+				<textarea maxlength="250" class="form-control" id="entradilla" name="entradilla" required></textarea>
+				<span class='help-block'>Máximo 250 caracteres</span>
+			</div>
+		</div>
+
 		<!-- Texto -->
-		<label for="texto">Texto</label>
-		<textarea id="texto" name="texto" required></textarea>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="texto">Texto</label>
+			<div class="col-md-4">
+				<textarea class="form-control" id="texto" name="texto" required></textarea>
+			</div>
+		</div>
+
 		<!-- Revista -->
-		<label for="revista">Revista</label>
-			<select name="revista" id="revista">
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="revista">Revista</label>
+			<div class="col-md-4">
+				<select class="form-control" name="revista" id="revista">
 <?php
 	$consulta = "SELECT cod_revista, numero, fecha FROM revistas ORDER BY numero;";
 
@@ -107,13 +115,16 @@
 			<option value='".$dato['cod_revista']."'>Número: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
 		");
 	}
-		echo ("
-			</select>
-		");
 ?>
+				</select>
+			</div>
+		</div>
+
 		<!-- Autor -->
-		<label>Autor</label>
-			<select name="autor" id="autor" onChange="checkOption(this)">
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="autor">Autor</label>
+			<div class="col-md-4">
+				<select class="form-control" name="autor" id="autor" onChange="checkOption(this)">
 				<option value='vacio'>Sin autor</option>
 <?php
 	$consulta = "SELECT * FROM autores ORDER BY nombre, apellidos;";
@@ -125,31 +136,54 @@
 			<option value='".$dato['cod_autor']."'>".$dato['nombre']." ".$dato['apellidos']."</option>
 		");
 	}
-		echo("
-			</select>
-		");
 ?>
+				</select>
+			</div>
+		</div>
+
 		<!-- Portada -->
-		<label for="archivo">Imagen</label>
-		<input type="file" id="archivo" name="archivo">
-		<div class="attachements">
-			<h3>Nuevo autor
-				<div class="tooltip">
-		    		<i class="fa fa-question"></i>
-		    			<span class="tooltiptext">Si no hay seleccionado un autor, podrás añadirlo desde aquí</span>
-		    	</div>
-		    </h3>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="archivo">Imagen</label>
+			<div class="col-md-4">
+				<input class="input-file" type="file" id="archivo" name="archivo">
+			</div>
+		</div>
+
 
 			<!-- Nombre Nuevo Autor -->
-			<label for="nuevoNombre">Nombre</label>
-			<input type="text" name="nombre" id="nuevoNombre">
-			<!-- Apellidos Nuevo Autor -->
-			<label for="apellidosAutor">Apellidos</label>
-			<input type="text" name="apellidos" id="apellidosAutor">
-				<div class="buttons">
-					<input type="submit" value="Añadir">
-					<input type="reset" value="Borrar">
-				</div>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="nuevoNombre">Nombre</label>
+			<div class="col-md-2">
+				<input class="form-control input-md" type="text" name="nombre" id="nuevoNombre">
+			</div>
 		</div>
-</div>		
-	</form>
+
+			<!-- Apellidos Nuevo Autor -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="apellidosAutor">Apellidos</label>
+			<div class="col-md-2">
+				<input class="form-control input-md" type="text" name="apellidos" id="apellidosAutor">
+			</div>
+		</div>
+		
+			<!-- Botones -->
+		<div class="form-group">
+			<label class="col-md-4 control-label"></label>
+			<div class="col-md-8">
+				<button class="btn btn-success">Añadir</button>
+				<button class="btn btn-danger">Borrar</button>
+			</div>
+		</div>
+	</fieldset>
+</form>
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+    html:true,
+    content:function(){
+    return ("Primero debe tener creada una revista");
+    },
+    });   
+});
+</script>
