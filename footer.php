@@ -10,11 +10,13 @@
 <style>
 
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color:#2b2b2b;
     color:#ddd;
     min-height:100px;
-    padding-top:20px;
-    padding-bottom:40px;
+    padding:20px 0;
 }
 
 footer .nav>li>a {
@@ -36,7 +38,7 @@ footer .nav>li>a:hover {
 <footer id="footer">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 column">
+            <div class="col-md-6 column">
                 <ul class="nav">
                     <li><a href="about-us.html">Politica de privacidad</a></li>
                     <li><a href="">Mapa de la web</a></li>
@@ -49,6 +51,5 @@ footer .nav>li>a:hover {
                 </ul>
             </div>
         </div>
-        <!--/row-->
     </div>
 </footer>

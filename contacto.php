@@ -111,3 +111,9 @@
 </style>
 
 <!-- Formulario de contacto -->
+
+<?php
+
+    include_once("footer.php");
+
+?>
