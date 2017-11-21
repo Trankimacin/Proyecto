@@ -31,16 +31,21 @@
 				mysqli_query($conexion, $consulta);
 
 				if(mysqli_errno($conexion)==0){
-					echo ("<div class='success-msg'>
-							<i class='fa fa-check'></i>
-							Se ha añadido correctamente
-							</div>
+					echo ("
+					    <div class='alert alert-success fade in'>
+						      <a href='' class='close' data-dismiss='alert'>&times;</a>
+						      <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+						      Revista añadida correctamente
+						  </div>
 					");
 				}else{
-					echo ("<div class='error-msg'>
-							<i class='fa fa-times-circle'></i>
-							No se pudo añadir
-							</div>");
+					echo ("
+						  <div class='alert alert-danger fade in'>
+						      <a href='' class='close' data-dismiss='alert'>&times;</a>
+						      <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+						      No se ha podido añadir la revista
+						  </div>
+					");
 				}
 			}else{
 				echo ("<h2>No se ha podido hacer la inserción</h2>");
@@ -50,26 +55,43 @@
 
 ?>
 
-<div class="wrapper">
 
-	<h2 id="account">Añadir nueva revista</h2>
+<form class='form-horizontal' name='revista' action="altaRevista.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
 
-	<form name="revista" action="altaRevista.php" method="post" enctype="multipart/form-data" onsubmit="return subido()">
-	<div class="info">
-		<h3>Datos</h3>
-		<!--Número Revista-->
-		<label for="numero">Número de revista</label>
-			<input id="numero" type="number" name="numero" required>
-		<!--Fecha-->
-		<label for="fecha">Fecha de públicación</label>
-		<input id="fecha" type="text" id="fecha" required>
-		<!--Archivo-->
-		<label for="archivo">Portada</label>
-		<input id="archivo" type="file" name="archivo">
-		<div class="buttons">
-			<input type="submit" value="Añadir">
-			<input type="reset" value="Borrar">
+	<fieldset>
+		<legend>Añadir Revista</legend>
+
+		<!--Número de revista-->
+		<div class='form-group'>
+			<label class='col-md-4 control-label' for='numero'>Número de revista</label>
+			<div class='col-md-4'>
+				<input id='numero' name='numero' type='number' class='form-control input-md' required>
+			</div>
 		</div>
-	</div>
-	</form>
-</div>
+
+		<!--Fecha-->
+		<div class='form-group'>
+			<label class='col-md-4 control-label' for='fecha'>Fecha de publicación</label>
+			<div class='col-md-4'>
+				<input type='text' id='fecha' name='fecha' class='form-control input-md' required>
+			</div>
+		</div>
+		
+		<!--Archivo-->
+		<div class='form-group'>
+			<label class='col-md-4 control-label' for='archivo' name='archivo'>Portada</label>
+			<div class='col-md-4'> 
+				<input type='file' name='archivo' id='archivo' class='input-file'>
+			</div>
+		</div>
+
+		<!--Botones-->
+		<div class='form-group'>
+			<label class='col-md-4 control-label'></label>
+			<div class='col-md-8'>
+				<button class='btn btn-success'>Añadir</button>
+				<button class='btn btn-danger'>Borrar</button>
+			</div>
+		</div>
+	</fieldset>
+</form>

@@ -18,16 +18,22 @@
 			mysqli_query($conexion, $consulta);
 
 			if(mysqli_errno($conexion)==0){
-				echo ("<div class='success-msg'>
-						<i class='fa fa-check'></i>
-						Se ha modificado correctamente
-						</div>
+				echo ("
+				    <div class='alert alert-success fade in'>
+				      	<a href='' class='close' data-dismiss='alert'>&times;</a>
+				     	<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+				     	Modificada correctamente
+				  	</div>
 				");
 			}else{
-				echo ("<div class='error-msg'>
-						<i class='fa fa-times-circle'></i>
-						No se pudo modificar
-						</div>");
+				echo ("
+					  <div class='alert alert-danger fade in'>
+					      <a href='' class='close' data-dismiss='alert'>&times;</a>
+					      <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+					    	No se ha podido modificar
+					  </div>
+				");
+
 			}
 
 		}else{
@@ -53,16 +59,21 @@
 					mysqli_query($conexion, $consulta);
 
 					if(mysqli_errno($conexion)==0){
-						echo ("<div class='success-msg'>
-								<i class='fa fa-check'></i>
-								Se ha modificado correctamente
-								</div>
+						echo ("
+						    <div class='alert alert-success fade in'>
+						      	<a href='' class='close' data-dismiss='alert'>&times;</a>
+						      	<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+						      	Todo ha salido bien
+						 	</div>
 						");
 					}else{
-						echo ("<div class='error-msg'>
-								<i class='fa fa-times-circle'></i>
-								No se pudo modificar
-								</div>");
+						echo ("
+					  		<div class='alert alert-danger fade in'>
+						      	<a href='' class='close' data-dismiss='alert'>&times;</a>
+						      	<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+						    	No se ha podido modificar
+						  	</div>	
+						");
 					}
 				}else{
 					echo ("<h2>No se pudo hacer la modificación</h2>");
@@ -81,13 +92,9 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<div class='wrapper'>
-
-			<h2 id='account'>Modificar revista</h2>
-
-			<form name='formulario' action='modificarRevista.php' method='post' enctype='multipart/form-data'>
-			<div class='info'>
-			<h3>Datos</h3>
+			<form name='formulario' class='form-horizontal' action='modificarRevista.php' method='post' enctype='multipart/form-data'>
+			<fieldset>
+			<legend>Modificar Revista</legend>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
@@ -95,42 +102,63 @@
 
 			echo ("
 				<input type='hidden' name='cod_revista' value='".$dato['cod_revista']."'>
-				<label for='numero'>Número de la revista</label>
-				<input type='number' id='numero' name='numero' value='".$dato['numero']."'>
-				<label id='fecha'>Fecha</label>
-				<input type='text' id='fecha' name='fecha' value='".$dato['fecha']."'>
-				<label>Portada</label>
-				<input type='text' name='portada' value='".$dato['portada']."' readonly>
-				<label for='nueva'>Nueva portada</label>
-				<input type='file' id='nueva' name='archivo'>
-				<label class='empty'>Publicada</label>
-				<fieldset>
-				<legend>Publicada</legend>
-				<span class='bloque2'>
-				<input type='radio' id='no' name='publicada' value='0'
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='numero'>Número de revista</label>
+					<div class='col-md-4'>
+						<input id='numero' name='numero' type='number' class='form-control input-md' value='".$dato['numero']."'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='fecha'>Fecha de publicación</label>
+					<div class='col-md-4'>
+						<input type='text' id='fecha' name='fecha' class='form-control input-md' value='".$dato['fecha']."'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='portada'>Portada</label>
+					<div class='col-md-4'>
+						<input id='portada' name='portada' type='text' class='form-control input-md' value='".$dato['portada']."' readonly>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='nueva' name='nueva'>Portada</label>
+					<div class='col-md-4'> 
+						<input type='file' name='nueva' id='nueva' class='input-file'>
+						<span class='help-block'>Subir nuevo archivo solo si se quiere cambiar la portada</span>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='publicada'>Publicada</label>
+					<div class='col-md-4'>
+					<div class='radio'>
+					<label for='no'>
+						<input type='radio' id='no' name='publicada' value='0'
 			");if($publicada==0){echo ("checked");}
 				echo ("
-				>
-				<span class='radio'></span>
-				<label for='no'>No</label>
-				</span>
-				<span class='bloque2'>
-				<input type='radio' id='si' name='publicada' value='1'
+				>No
+					</label>
+					</div>
+					<div class='radio'>
+					<label for='si'>
+						<input type='radio' id='si' name='publicada' value='1'
 				");if($publicada==1){echo ("checked");}
 				echo ("
-				>
-				<span class='radio'></span>
-				<label for='si'>Si</label>
-				</span>
-				</fieldset>
+				>Si
+					</label>
+					</div>
+					</div>
+				</div>
 				");
 		}
 			echo ("
-				<div class='buttons'>
-				<input type='submit' value='modificar' onclick='return confirm(\"¿Seguro que quiere modificarlo?\")'/>
+				<div class='form-group'>
+				<label class='col-md-4 control-label'></label>
+				<div class='col-md-8'>
+				<button class='btn btn-success'>Modificar</button>
 				</div>
-			</div>
-			</form>
+				</div>
+				</fieldset>
+				</form>
 			");
 	}else{
 
@@ -138,11 +166,16 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2>Selecciona una revista para modificar</h2>
-
-			<form name='modifica' method='post' action='modificarRevista.php'>
-				<select name='desplegable'>
-					<option value='vacio' selected>Selecciona una revista</option>
+			<div class='modal-dialog'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<h4 class='modal-title'>Modificar revista</h4>
+					</div>
+					<div class='modal-body'>
+						<form action='modificarREvista.php' method='post' onsubmit='return seleccionado();'>
+							<div class='form-group'>
+								<select id='selec' name='desplegable'>
+									<option value='vacio' selected>Selecciona una revista</option>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
@@ -151,9 +184,13 @@
 				");
 		}
 		echo ("
-				</select>
-				<input type='button' value='Modificar' onclick='seleccionado();'>
-			</form>
+								</select>
+							</div>
+							<button class='form-control btn btn-primary'/>Modificar</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		");
 	}
 
