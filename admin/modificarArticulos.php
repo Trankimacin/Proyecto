@@ -58,16 +58,21 @@
 		}
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<div class='success-msg'>
-					<i class='fa fa-check'></i>
-					Se ha modificado correctamente
-					</div>
+			echo ("
+			    <div class='alert alert-success fade in'>
+			      	<a href='' class='close' data-dismiss='alert'>&times;</a>
+			      	<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+			    	Articulo modificado correctamente
+			 	</div>
 			");
 		}else{
-			echo ("<div class='error-msg'>
-					<i class='fa fa-times-circle'></i>
-					No se pudo modificar
-					</div>");
+			echo ("
+			    <div class='alert alert-danger fade in'>
+			      	<a href='' class='close' data-dismiss='alert'>&times;</a>
+			      	<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+			    	No se ha podido modificar
+			 	</div>
+			");
 		}
 	}
 
@@ -75,101 +80,131 @@
 
 		$cod_articulo = $_POST['desplegable'];
 
-		echo ("
-			<div class='wrapper'>
-
-			<h2 id='account'>Modificar articulo
-				<div class='tooltip'>
-					<i class='fa fa-question'></i>
-						<div class='tooltiptext'>Rellena solo los campos que quiera cambiar</div>
+		echo ("	
+			<form name='formulario' class='form-horizontal' action='modificarArticulos.php' method='post' enctype='multipart/form-data'>
+				<fieldset>
+				<legend>Modificar Articulo
+				<a href='#' data-trigger='focus' data-toggle='popover' class='glyphicon glyphicon-cog'></a>
+				</legend>
+					<input type='hidden' name='articulo' value='$cod_articulo'>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='titulo'>Título</label>
+					<div class='col-md-4'>
+					<input type='text' id='titulo' name='titulo'>
+					</div>
 				</div>
-			</h2>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='entradilla'>Entradilla</label>
+					<div class='col-md-4'>
+					<textarea class='form-control' id='entradilla' name='entradilla' maxlength='250'></textarea>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='texto'>Texto</label>
+					<div class='col-md-4'>
+					<textarea class='form-control' id='texto' name='texto'></textarea>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label for='revista' class='col-md-4 control-label'>Revista</label>
+					<div class='col-md-4'>
+						<select class='form-control' id='revista' name='revista'>
+							<option value='vacio'>Seleciona una revista</option>
 		");
 
-		echo ("<form name='modificar' action='modificarArticulos.php' method='post' enctype='multipart/form-data'>
-			<div class='info'>
-			<input type='hidden' name='articulo' value='$cod_articulo'>
-		");
-?>
-		<label for='titulo'>Título</label>
-		<input type="text" id="titulo" name="titulo">
-		<label for='entradilla'>Entradilla
-			<div class='tooltip'>
-				<i class='fa fa-question'></i>
-					<span class='tooltiptext'>Máximo 250 carácteres</span>
-			</div>
-		</label>
-		<textarea maxlength="250" id='entradilla' name="entradilla"></textarea>
-		<label for='texto'>Texto</label>
-		<textarea id='texto' name="texto"></textarea>
-		<label for="revista">Revista</label>
-			<select name="revista">
-				<option value="vacio" id="revista">Seleciona una revista</option>
-<?php
 	$consulta = "SELECT cod_revista, numero, fecha FROM revistas ORDER BY numero;";
 
 	$resultado = mysqli_query($conexion, $consulta);
 
 	while($dato=mysqli_fetch_array($resultado)){
 		echo ("
-			<option value='".$dato['cod_revista']."'>Número: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
+							<option value='".$dato['cod_revista']."'>Número: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
 		");
 	}
 		echo ("
-			</select></p>
-		");
-?>
-		<label for="autor">Autor</label>
-			<select name="autor" id="autor">
-				<option value='vacio'>Selecciona un autor</option>
-<?php
+						</select>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label for='autor' class='col-md-4 control-label'>Autor</label>
+					<div class='col-md-4'>
+						<select class='control-form' name='autor' id='autor'>
+							<option value='vacio'>Selecciona un autor</option>
+			");
+	mysqli_free_result($consulta);
+
 	$consulta = "SELECT * FROM autores ORDER BY nombre, apellidos;";
 
 	$resultado = mysqli_query($conexion, $consulta);
 
 	while($dato=mysqli_fetch_array($resultado)){
 		echo("
-			<option value='".$dato['cod_autor']."'>".$dato['nombre']." ".$dato['apellidos']."</option>
+							<option value='".$dato['cod_autor']."'>".$dato['nombre']." ".$dato['apellidos']."</option>
 		");
 	}
 		echo("
-			</select></p>
-		");
-?>
-		<label for="imagen">Imagen</label>
-		<input type="file" id="imagen" name="archivo">
-		<div class="buttons">
-			<input type="submit" value="Modificar"">
-			<input type="reset" value="Borrar">
-		</div>
-	</div>
-</div>
-	</form>
+						</select>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label' for='imagen'>Imagen</label>
+					<div class='col-md-4'>
+						<input type='file' id='imagen' name='archivo' class='input-file'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='col-md-4 control-label'></label>
+					<div class='col-md-8'>
+						<button class='btn btn-success'>Modificar</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
 
-<?php
+		");
+
 	}else{
 
 		$consulta = "SELECT * FROM articulos ORDER BY titulo;";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
-			<h2>Selecciona un articulo para modificar</h2>
-			<form name='modifica' method='post' action='modificarArticulos.php'>
-				<select name='desplegable'>
-					<option value='vacio' selected>Selecciona un articulo</option>
+			<div class='modal-dialog'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<h4 class='modal-title'>Modificar Articulo</h4>
+					</div>
+					<div class='modal-body'>
+						<form action='modificarArticulos.php' method='post' onsubmit='return seleccionado();'>
+							<div class='form-group'>
+								<select id='selec' name='desplegable'>
+									<option value='vacio' selected>Selecciona un articulo</option>
 		");
 
 		while($dato=mysqli_fetch_array($resultado)){
-			echo("
+				echo ("
 					<option value='".$dato['cod_articulo']."'>".$dato['titulo']."</option>
-			");
+				");
 		}
-
-		echo("
-				</select>
-				<input type='button' value='Modificar' onclick='return seleccionado();'>
-			</form>
+		echo ("
+								</select>
+							</div>
+							<button class='form-control btn btn-primary'/>Modificar</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		");
 	}
 
 ?>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+    html:true,
+    content:function(){
+    return ("Cambia solo los campos que quieras");
+    },
+    });   
+});
+</script>
