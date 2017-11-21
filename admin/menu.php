@@ -37,19 +37,19 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="">Autores <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Articulos <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="altaArticulo.php">Alta Artiuclo</a></li>
-            <li><a href="modificarArticulo.php">Modificar Articulo</a></li>
-            <li><a href="bajaArticulo.php">Eliminar Articulo</a></li>
+            <li><a href="altaArticulos.php">Alta Artiuclo</a></li>
+            <li><a href="modificarArticulos.php">Modificar Articulo</a></li>
+            <li><a href="bajaArticulos.php">Eliminar Articulo</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="">Articulos <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">Autores <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="altaAutor.php">Alta Autor</a></li>
-            <li><a href="modificarAutor.php">Modificar Autor</a></li>
-            <li><a href="bajaAutor.php">Eliminar Autor</a></li>
+            <li><a href="altaAutores.php">Alta Autor</a></li>
+            <li><a href="modificarAutores.php">Modificar Autor</a></li>
+            <li><a href="bajaAutores.php">Eliminar Autor</a></li>
           </ul>
         </li>
         <li class="dropdown">

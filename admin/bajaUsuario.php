@@ -36,7 +36,7 @@
 					<div class='alert alert-success fade in'>
 						<a href='' class='close' data-dismiss='alert'>&times;</a>
 						<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
-						Se ha modificado correctamente
+						Se ha eliminado correctamente
 					</div>
 				");
 			}else{
@@ -44,7 +44,7 @@
 					<div class='alert alert-danger fade in'>
 						<a href='' class='close' data-dismiss='alert'>&times;</a>
 						<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-						Se ha modificado correctamente
+						No se ha podido eliminar
 					</div>
 				");
 			}
@@ -59,7 +59,7 @@
 		<div class='modal-dialog'>
 			<div class='modal-content'>
 				<div class='modal-header'>
-					<h4 class='modal-title'>Modificar usuario</h4>
+					<h4 class='modal-title'>Eliminar un usuario</h4>
 				</div>
 				<div class='modal-body'>
 					<form action='bajaUsuario.php' method='post' onsubmit='return seleccionado();'>

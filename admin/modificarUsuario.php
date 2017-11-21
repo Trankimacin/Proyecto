@@ -28,7 +28,7 @@
 				<div class='alert alert-danger fade in'>
 					<a href='' class='close' data-dismiss='alert'>&times;</a>
 					<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-					Se ha modificado correctamente
+					No se ha podido modificar
 				</div>
 			");
 		}
@@ -47,7 +47,7 @@
 				<div class='modal-dialog'>
 					<div class='modal-content'>
 						<div class='modal-header'>
-							<h4 class='modal-title'>Selecciona una nueva contraseña</h4>
+							<h4 class='modal-title'>Modificar datos usuario</h4>
 						</div><!-- Termina la cabecera -->
 						<div class='modal-body'>
 							<form action='modificarUsuario.php' method='post' onsubmit='return validar();'>

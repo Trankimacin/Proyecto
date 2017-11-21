@@ -16,30 +16,48 @@
 		mysqli_query($conexion, $consulta);
 
 		if(mysqli_errno($conexion)==0){
-			echo ("<div class='success-msg'>
-					<i class='fa fa-check'></i>
-					Se ha añadido correctamente
-					</div>
+			echo ("
+			    <div class='alert alert-success fade in'>
+			      <a href='' class='close' data-dismiss='alert'>&times;</a>
+			      <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+			      Se ha añadido correctamente
+			  	</div>
 			");
 		}else{
-			echo ("<div class='error-msg'>
-					<i class='fa fa-times-circle'></i>
-					No se pudo añadir
-					</div>");
+			echo ("
+			  <div class='alert alert-danger fade in'>
+			      <a href='' class='close' data-dismiss='alert'>&times;</a>
+			      <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+			      No se ha podido añadir
+			  </div>
+			");
 		}
 	}
 
 ?>
 
-<h2 class="medio">Añadir un nuevo autor</h2>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Añadir un autor</h4>
+			</div><!-- Termina la cabecera -->
+			<div class="modal-body">
+				<form action="altaAutores.php" method="post">
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre"/>
+							<label for="nombre" class="input-group-addon glyphicon glyphicon-font"></label>
+						</div>
+					</div><!-- Termina el DIV de usuario-->
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" name="apllidos" id="apellidos" placeholder="Apellidos"/>
+							<label for="apellidos" class="input-group-addon glyphicon glyphicon-font"></label>
+						</div>
+					</div>
 
-<form action="altaAutores.php" method="post">
-	<div class="container">
-		<label>Nombre</label>
-		<input type="text" name="nombre" placeholder="Nombre del autor" required pattern="[a-zA-Z]{1,25}" title="Solo letras en el nombre">
-		<label>Apellidos</label>
-		<input type="text" name="apellidos" placeholder="Apellidos del autor" required pattern="[a-zA-Z\s]+" title="Solo letras en los apellidos">
-		<input type="submit" value="Añadir">
-	</div>
-</form>
-
+					<button class="form-control btn btn-success">Añadir</button>
+				</form>
+			</div><!--Termina el body-->
+		</div><!--Termina el modal-content-->
+	</div><!--Termina el div para el formulario-->
