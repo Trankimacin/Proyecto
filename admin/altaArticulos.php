@@ -51,16 +51,21 @@
 				mysqli_query($conexion, $consulta);
 
 				if(mysqli_errno($conexion)==0){
-					echo ("<div class='success-msg'>
-							<i class='fa fa-check'></i>
-							Se ha añadido correctamente
-							</div>
+					echo ("
+					   	<div class='alert alert-success fade in'>
+					      <a href='' class='close' data-dismiss='alert'>&times;</a>
+					      <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+					      Se ha añadido correctamente
+						</div>
 					");
 				}else{
-					echo ("<div class='error-msg'>
-							<i class='fa fa-times-circle'></i>
-							No se pudo añadir
-							</div>");
+					echo ("
+						<div class='alert alert-danger fade in'>
+							<a href='' class='close' data-dismiss='alert'>&times;</a>
+							<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+							No se ha podido añadir
+						</div>
+					");
 				}
 
 			}
@@ -72,7 +77,7 @@
 	<form class="form-horizontal" name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
 		<fieldset>
 			<legend>Añadir nuevo articulo
-				<a href='#' data-trigger='focus' data-toggle='popover' class='glyphicon glyphicon-cog'></a>
+				<a href='#' data-trigger='focus' data-toggle='titulo' data-content='Primero debe tener creada una revista' class='glyphicon glyphicon-cog'></a>
 			</legend>
 
 		<!-- Titutlo -->
@@ -149,11 +154,15 @@
 			</div>
 		</div>
 
-
+		<div class="container">
+		    <div class="row medio">
+		        <h4>Nuevo Autor <a href='#' data-trigger='focus' data-toggle='nuevo' data-content='Desde aquí crearemos un nuevo Autor' class='glyphicon glyphicon-cog'></a></h4>
+		    </div>
+		</div>
 			<!-- Nombre Nuevo Autor -->
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="nuevoNombre">Nombre</label>
-			<div class="col-md-2">
+			<div class="col-md-4">
 				<input class="form-control input-md" type="text" name="nombre" id="nuevoNombre">
 			</div>
 		</div>
@@ -161,7 +170,7 @@
 			<!-- Apellidos Nuevo Autor -->
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="apellidosAutor">Apellidos</label>
-			<div class="col-md-2">
+			<div class="col-md-4">
 				<input class="form-control input-md" type="text" name="apellidos" id="apellidosAutor">
 			</div>
 		</div>
@@ -178,12 +187,8 @@
 </form>
 
 <script>
-  $(document).ready(function(){
-    $('[data-toggle="popover"]').popover({
-    html:true,
-    content:function(){
-    return ("Primero debe tener creada una revista");
-    },
-    });   
+$(document).ready(function(){
+    $('[data-toggle="titulo"]').popover();   
+    $('[data-toggle="nuevo"]').popover();
 });
 </script>
