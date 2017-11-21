@@ -61,7 +61,7 @@
 							<input type="password" name="pass_2" class="form-control" id="pass_2" placeholder="Password"/>
 							<label for="pass_2" class="input-group-addon glyphicon glyphicon-lock"></label>
 						</div>
-						<span id="helpBlock" class="help-block">Debe coincidir las contraseña</span>
+						<span id="helpBlock" class="help-block">Deben coincidir las contraseña</span>
 					</div><!--Termina el DIV de la segunda password-->
 					<button class="form-control btn btn-success">Registrar</button>
 				</form>
