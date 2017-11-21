@@ -9,33 +9,30 @@
 
 <style>
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.prueba {
     background-color:#2b2b2b;
     color:#ddd;
     min-height:100px;
     padding:20px 0;
 }
 
-footer .nav>li>a {
+.prueba .nav>li>a {
     padding: 3px;
     color: #f44d3c;
 }
-footer .nav>li{
+.prueba .nav>li{
     padding: 3px;
     color: #f44d3c;
 }
 
-footer .nav>li>a:hover {
+.prueba .nav>li>a:hover {
     background-color:transparent;
     color:#fff;
 }
 
 </style>
 
-<footer id="footer">
+<nav class="prueba navbar navbar-fixed-botton " role=navigation">
     <div class="container">
         <div class="row">
             <div class="col-md-6 column">
@@ -52,4 +49,4 @@ footer .nav>li>a:hover {
             </div>
         </div>
     </div>
-</footer>
+</nav>
