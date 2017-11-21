@@ -20,62 +20,23 @@
 
 		echo ("
 			<div class='container'>
-			  <div class='row'>
-			    <div class='col-sm-6 col-md-4'>
-			      <div class='thumbnail'>
-			        <a href=''><img src='...' alt='Imagen'></a>
-			        <div class='caption'>
-			          <h3>Titulo</h3>
-			          <p>Fecha</p>
-			        </div>
-			      </div>
-			    </div>
-			    <div class='col-sm-6 col-md-4'>
-			      <div class='thumbnail'>
-			        <a href=''><img src='...' alt='Imagen'></a>
-			        <div class='caption'>
-			          <h3>Titulo</h3>
-			          <p>Fecha</p>
-			        </div>
-			      </div>
-			    </div>
-			    <div class='col-sm-6 col-md-4'>
-			      <div class='thumbnail'>
-			        <a href=''><img src='...' alt='Imagen'></a>
-			        <div class='caption'>
-			          <h3>Titulo</h3>
-			          <p>Fecha</p>
-			        </div>
-			      </div>
-			    </div>
-			    <div class='col-sm-6 col-md-4'>
-			      <div class='thumbnail'>
-			        <a href=''><img src='...' alt='Imagen'></a>
-			        <div class='caption'>
-			          <h3>Titulo</h3>
-			          <p>Fecha</p>
-			        </div>
-			      </div>
-			    </div>
-			    <div class='col-sm-6 col-md-4'>
-			      <div class='thumbnail'>
-			        <a href=''><img src='...' alt='Imagen'></a>
-			        <div class='caption'>
-			          <h3>Titulo</h3>
-			          <p>Fecha</p>
-			        </div>
-			      </div>
-			    </div>
-			    <div class='col-sm-6 col-md-4'>
-			      <div class='thumbnail'>
-			        <a href=''><img src='...' alt='Imagen'></a>
-			        <div class='caption'>
-			          <h3>Titulo</h3>
-			          <p>Fecha</p>
-			        </div>
-			      </div>
-			    </div>
-			  </div>
+				<div class='row'>
+		");
+		while($dato=mysqli_fetch_array($resultado)){
+			echo ("
+				    <div class='col-sm-6 col-md-4'>
+				      <div class='thumbnail'>
+				        <a href='articulo.php?r=".$dato['cod_revista']."'><img src='media/img/portadas/".$dato['portada']."' alt='Imagen'></a>
+				        <div class='caption text-center'>
+				          <h3>Número: ".$dato['numero']."</h3>
+				          <p>Fecha: ".$dato['fecha']."</p>
+				        </div>
+				      </div>
+				    </div>
+			");
+		}
+		echo ("
+				</div>
 			</div>
 		");
 	}
