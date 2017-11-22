@@ -1,3 +1,24 @@
 .medio {
 	text-align: center;
 }
+
+.prueba {
+    background-color:#2b2b2b;
+    color:#ddd;
+    min-height:100px;
+    padding:20px 0;
+}
+
+.prueba .nav>li>a {
+    padding: 3px;
+    color: #f44d3c;
+}
+.prueba .nav>li{
+    padding: 3px;
+    color: #f44d3c;
+}
+
+.prueba .nav>li>a:hover {
+    background-color:transparent;
+    color:#fff;
+}
