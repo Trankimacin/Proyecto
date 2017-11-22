@@ -44,6 +44,7 @@ function validar(){
 	return true;
 }
 
+//Comprueba que hayamos seleccionado uno diferente al defaul
 function seleccionado(){
 	var selec = document.getElementById('selec').value
 	if (selec=="vacio"){
@@ -53,17 +54,7 @@ function seleccionado(){
 	return true;
 }
 
-function selec(){
-	if (document.altaAutor.autor.value=="vacio"){
-		alert ("Debes seleccionar un autor de la lista");
-	}else if
-		(document.altaAutor.archivo.value.length==0){
-		alert ("Debes seleccionar un archivo para el articulo");
-	}else{
-		document.altaAutor.submit();
-	}
-}
-
+//Comprueba que haya un archivo para subirse
 function subido(){
 	var archivo = document.getElementById("archivo").value;
 	if (archivo.length==0){
@@ -72,7 +63,7 @@ function subido(){
 	}
 }
 
-
+//Compruba el estado, si es diferente a vacio, cambia el estado de los input
 function checkOption(obj) {
     var input = document.getElementsByName("nombre");
     var input2 = document.getElementsByName("apellidos");
