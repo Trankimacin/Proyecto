@@ -43,7 +43,7 @@
 					<h4 class='modal-title'>Eliminar un articulo</h4>
 				</div>
 				<div class='modal-body'>
-					<form action='bajaArticulo.php' method='post' onsubmit='return seleccionado();'>
+					<form action='bajaArticulos.php' method='post' onsubmit='return seleccionado();'>
 						<div class='form-group'>
 							<select id='selec' name='desplegable'>
 								<option value='vacio' selected>Selecciona un articulo</option>
