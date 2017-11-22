@@ -27,30 +27,39 @@
                         <legend class='text-center header'>Contacta con nosotros</legend>
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='fname' name='nombre' type='text' placeholder='Nombre' class='form-control'>
+                                <input id='fname' name='nombre' type='text' placeholder='Nombre' class='form-control' required>
                             </div>
                         </div>
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='lname' name='apellidos' type='text' placeholder='Apellidos' class='form-control'>
-                            </div>
-                        </div>
-
-                        <div class='form-group'>
-                            <div class='col-md-10 col-md-offset-1'>
-                                <input id='email' name='email' type='text' placeholder='Dirección de correo' class='form-control'>
+                                <input id='lname' name='apellidos' type='text' placeholder='Apellidos' class='form-control' required>
                             </div>
                         </div>
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='phone' name='telefono' type='text' placeholder='Teléfono' class='form-control'>
+                                <input id='email' name='email' type='text' placeholder='Dirección de correo' class='form-control' required>
                             </div>
                         </div>
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <textarea class='form-control' id='message' name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7'></textarea>
+                                <input id='phone' name='telefono' type='text' placeholder='Teléfono' class='form-control' required>
+                            </div>
+                        </div>
+
+                        <div class='form-group'>
+                            <div class='col-md-10 col-md-offset-1'>
+                                <textarea class='form-control' id='message' maxlength="300" name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7' required></textarea>
+                                <span class="help-block text-center" id="ayuda" style="display: none;">Máximo 300 carácteres</span>
+                                <script>
+                                    $('textarea').focus(function(){
+                                        jQuery('#ayuda').show();
+                                    })
+                                    $('textarea').focusout(function(){
+                                        jQuery('#ayuda').hide();
+                                    })
+                                </script>
                             </div>
                         </div>
 
