@@ -69,11 +69,9 @@
                     <div class='text-center header'>Nuestra oficina</div>
                     <div class='panel-body text-center'>
                         <h4>Dirección</h4>
-                        <div>
-                        Prueba<br />
-                        Madrid, España<br />
-                        revista@revista.com<br />
-                        </div>
+                        <div>Antonio Lopez, 28</div>
+                        <div>Madrid, España</div>
+                        <div>revista@revista.com</div>
                         <hr />
                         <div id='map1' class='map'>
                         </div>
@@ -90,7 +88,7 @@
 <script type='text/javascript'>
     jQuery(function ($) {
         function init_map1() {
-            var myLocation = new google.maps.LatLng(38.885516, -77.09327200000001);
+            var myLocation = new google.maps.LatLng(40.3964447, -3.7134246);
             var mapOptions = {
                 center: myLocation,
                 zoom: 16
@@ -106,23 +104,6 @@
         init_map1();
     });
 </script>
-
-<style>
-    .map {
-        min-width: 300px;
-        min-height: 300px;
-        width: 100%;
-        height: 100%;
-    }
-
-    .header {
-        background-color: #F5F5F5;
-        color: #36A0FF;
-        height: 70px;
-        font-size: 27px;
-        padding: 10px;
-    }
-</style>
 
 <!-- Formulario de contacto -->
 
