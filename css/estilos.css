@@ -8,7 +8,7 @@
     min-height:100px;
     padding:20px 0;
     bottom: 0;
-    position: absolute;
+    position: relative;
     width: 100%;
 }
 
@@ -24,10 +24,4 @@
 .pie .nav>li>a:hover {
     background-color:transparent;
     color:#fff;
-}
-
-@media (max-width: 992px) {
-    .pie {
-        position: initial;
-    }
 }
