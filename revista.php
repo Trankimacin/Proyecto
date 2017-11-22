@@ -25,13 +25,14 @@
 		echo ("
 			<div class='container'>
 				<div class='row'>
-					<div class='container col-md-9'>
+					<div class='col-md-9'>
+						<h2 class='text-center text-danger'>Listado de revistas</h2>
 		");
 		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
 					    <div class='col-md-4'>
 					      <div class='thumbnail'>
-					        <a href='articulo.php?r=".$dato['cod_revista']."'><img src='media/img/portadas/".$dato['portada']."' alt='Imagen'></a>
+					        <a href='articulo.php?re=".$dato['cod_revista']."'><img src='media/img/portadas/".$dato['portada']."' alt='Imagen'></a>
 					        <div class='caption text-center'>
 					          <h3>Número: ".$dato['numero']."</h3>
 					          <p>Fecha: ".$dato['fecha']."</p>

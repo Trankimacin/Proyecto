@@ -10,13 +10,13 @@
 
 	echo ("
 			<div class='col-md-3'>
-			<h4>Últimos articulos añadidos</h4>
+			<h4 class='text-center text-danger'>Últimos articulos añadidos</h4>
 			<ul class='list-group'>
 	");
 
 	while($dato=mysqli_fetch_array($resultado)){
 		echo ("
-				<li class='list-group-item'><a href='articulo.php?c=".$dato['cod_articulo']."'>".$dato['titulo']."</a></li>
+				<li class='list-group-item'><a href='articulo.php?ar=".$dato['cod_articulo']."'>".$dato['titulo']."</a></li>
 		");
 	}
 
