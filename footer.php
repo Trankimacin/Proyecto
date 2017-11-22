@@ -1,3 +1,6 @@
+
+<!-- Empieza el pie de la página -->
+
 <footer class="pie">
     <div class="container">
         <div class="row">
@@ -16,3 +19,9 @@
         </div>
     </div>
 </footer>
+
+<!-- Termina el pie -->
+
+</body>
+
+</html>

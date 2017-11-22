@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <title></title>
   <meta charset="utf-8">
@@ -10,11 +10,9 @@
 <link rel="stylesheet" href="css/estilos.css">
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <!-- JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/estilos.js"></script>
-<!-- Conexion -->
 
 <?php
 
@@ -23,6 +21,8 @@
 ?>
 
 </head>
+
+<!-- Empieza el menu de navegación -->
 
 <nav class="navbar navbar-inverse">
   	<div class="container-fluid">
@@ -54,3 +54,5 @@
     </div>
  	</div>
 </nav>
+
+<!-- Termina la barra de navegación -->

@@ -1,3 +1,5 @@
+<!-- Empieza el Aside -->
+
 <?php
 
 	require_once("conexion.php");
@@ -26,3 +28,5 @@
 	");
 
 ?>
+
+<!-- Termina el Aside -->

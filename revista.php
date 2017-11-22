@@ -2,6 +2,10 @@
 
 	include_once('menu.php');
 
+	echo ("
+<!-- Empieza el contenido de la página -->
+	");
+
 	$consulta = "SELECT * FROM revistas WHERE publicada=1;";
 
 	$resultado = mysqli_query($conexion, $consulta);
@@ -38,6 +42,7 @@
 		}
 		echo ("
 				</div>
+<!-- Termina el contenido de la página -->
 		");
 	}
 
@@ -45,3 +50,5 @@
 
 	include_once("footer.php");
 ?>
+
+<!-- Termina el contenido de la página -->
