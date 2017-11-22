@@ -1,4 +1,4 @@
-<nav class="prueba navbar navbar-fixed-botton" role="navigation">
+<footer class="pie">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
@@ -15,4 +15,4 @@
             </div>
         </div>
     </div>
-</nav>
+</footer>
