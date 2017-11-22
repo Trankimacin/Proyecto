@@ -2,23 +2,37 @@
 
 	include_once("menu.php");
 
+    if(isset($_POST['enviar'])){
+        $destino = 'correo@hotmail.com';
+        $asunto = "Mensaje enviado por: ".$_POST['nombre'];
+        $remitente = $_POST['email'];
+        $mensaje = 'Formulario de contacto de la revista';
+        $mensaje .= '\nNombre: '.$_POST['nombre'];
+        $mensaje .= '\nApellidos: '.$_POST['apellidos'];
+        $mensaje .= '\nEmail: '.$_POST['email'];
+        $mensaje .= '\nTeléfono: '.$_POST['telefono'];
+        $mensaje .= '\nMensaje: '.$_POST['mensaje'];
+
+        mail($destino,$asunto,$mensaje,"FROM: $remitente");
+    }
+
 ?>
 <!-- Formulario con mapa -->
 <div class='container'>
     <div class='row'>
         <div class='col-md-6'>
             <div class='well well-sm'>
-                <form class='form-horizontal' method='post'>
+                <form class='form-horizontal' name='contacto' method='post' action="contacto.php">
                     <fieldset>
                         <legend class='text-center header'>Contacta con nosotros</legend>
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='fname' name='name' type='text' placeholder='Nombre' class='form-control'>
+                                <input id='fname' name='nombre' type='text' placeholder='Nombre' class='form-control'>
                             </div>
                         </div>
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='lname' name='name' type='text' placeholder='Apellidos' class='form-control'>
+                                <input id='lname' name='apellidos' type='text' placeholder='Apellidos' class='form-control'>
                             </div>
                         </div>
 
@@ -30,19 +44,19 @@
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='phone' name='phone' type='text' placeholder='Teléfono' class='form-control'>
+                                <input id='phone' name='telefono' type='text' placeholder='Teléfono' class='form-control'>
                             </div>
                         </div>
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <textarea class='form-control' id='message' name='message' placeholder='Pon tu mensaje aquí.' rows='7'></textarea>
+                                <textarea class='form-control' id='message' name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7'></textarea>
                             </div>
                         </div>
 
                         <div class='form-group'>
                             <div class='col-md-12 text-center'>
-                                <button type='submit' class='btn btn-primary btn-lg'>Enviar</button>
+                                <button type='submit' name="enviar" class='btn btn-primary btn-lg'>Enviar</button>
                             </div>
                         </div>
                     </fieldset>
@@ -71,7 +85,7 @@
 </div>
 
 
-<script src='http://maps.google.com/maps/api/js?sensor=false'></script>
+<script src='http://maps.google.com/maps/api/js?key=AIzaSyAk6YaY79hLIZRAx-ymE-ZGJ701t-sd_Q0'></script>
 
 <script type='text/javascript'>
     jQuery(function ($) {
