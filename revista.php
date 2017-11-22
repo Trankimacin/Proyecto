@@ -20,12 +20,12 @@
 
 		echo ("
 			<div class='container'>
-				<div class='col-md-12'>
 				<div class='row'>
+				<div class='container col-md-9'>
 		");
 		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
-				    <div class='col-md-8'>
+				    <div class='col-md-4'>
 				      <div class='thumbnail'>
 				        <a href='articulo.php?r=".$dato['cod_revista']."'><img src='media/img/portadas/".$dato['portada']."' alt='Imagen'></a>
 				        <div class='caption text-center'>
@@ -36,6 +36,9 @@
 				    </div>
 			");
 		}
+		echo ("
+				</div>
+		");
 	}
 
 	include_once("lateral.php");
