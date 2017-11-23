@@ -2,7 +2,15 @@
 
 	include_once("menu.php");
 
+	echo ("
+		<div class='container'>
+			<div class='row'>
+				<div class='col-md-9'>
+					<h2 class='text-center text-danger'>Resultados de la búsqueda</h2>
+	");
+
 	if(isset($_POST['buscar'])){
+
 		$autor = $_POST['buscar'];
 
 		$consulta = "SELECT * FROM autores WHERE nombre LIKE '%$autor%' OR apellidos LIKE '%$autor%';";
@@ -16,6 +24,7 @@
 					<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
 					Error inesperado
 				</div>
+				</div>
 			");
 		}else{
 			$tuplas = mysqli_num_rows($resultado);
@@ -27,22 +36,39 @@
 						<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
 						No hay ningún autor llamado así
 					</div>
+					</div>
 				");
 			}else{
 				$fila = mysqli_fetch_assoc($resultado);
 
 				$cod_autor = $fila['cod_autor'];
 				
-				$consulta = "SELECT * FROM articulos WHERE cod_autor='$cod_autor';";
+				$consulta = "SELECT * FROM autores, articulos, imagenes WHERE autores.cod_autor='$cod_autor' AND articulos.cod_autor='$cod_autor' AND articulos.cod_imagen=imagenes.cod_imagen;";
 
 				$resultado = mysqli_query($conexion, $consulta);
 
 				while($dato=mysqli_fetch_array($resultado)){
-					echo ($dato['titulo']);
+					echo ("
+						<div class='col-md-4'>
+							<div class='thumbnail'>
+								<a href='articulo.php?ar=".$dato['cod_articulo']."'><img src='media/img/articulos/".$dato['ruta']."' alt='Imagen'></a>
+								<div class='caption text-center'>
+						        	<h3>Título: ".$dato['titulo']."</h3>
+						        	<p>Nombre: ".$dato['nombre']." Apellidos: ".$dato['apellidos']."</p>
+						        </div>
+							</div>
+						</div>
+					");
 				}
+
+				echo ("</div>");
 
 			}
 		}
 	}
+
+	include_once("lateral.php");
+
+	include_once("footer.php");
 
 ?>
