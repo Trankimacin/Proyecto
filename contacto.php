@@ -75,7 +75,7 @@
         <div class='col-md-6'>
             <div>
                 <div class='panel panel-default'>
-                    <div class='text-center header'>Nuestra oficina</div>
+                    <div class='text-center header'>Revista Coches</div>
                     <div class='panel-body text-center'>
                         <h4>Dirección</h4>
                         <div>Antonio Lopez, 28</div>
