@@ -9,7 +9,7 @@
 	$resultado = mysqli_query($conexion, $consulta);
 
 	echo ("
-			<div class='col-md-3'>
+			<div class='col-md-3 col-md-push-2'>
 			<h4 class='text-center text-danger'>Últimos articulos añadidos</h4>
 			<ul class='list-group'>
 	");
