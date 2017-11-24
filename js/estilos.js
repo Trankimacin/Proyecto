@@ -43,6 +43,7 @@ function checkOption(obj) {
     }
 }
 
+//Comprueba que los datos que vayamos a buscar, sean más de 3
 function comprobar(){
 	var buscar = document.getElementById('buscar').value;
 	if(buscar.length<3){

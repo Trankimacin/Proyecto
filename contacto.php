@@ -50,7 +50,7 @@
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <textarea class='form-control' id='mensaje' maxlength="300" name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7' required></textarea>
+                                <textarea class='form-control' id='mensaje' maxlength="300" minlength="10" name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7' required></textarea>
                                 <span class="help-block text-center" id="ayuda" style="display: none;">Máximo 300 carácteres</span>
                                 <script>
                                     $('textarea').focus(function(){
