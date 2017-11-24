@@ -59,7 +59,7 @@ echo ("
 			<li><a href='index.php?u=$dato2[cod_revista]'>Última Revista</a></li>
 		</ul>
     <ul class='nav navbar-nav'>
-      <li><a href='index.php?a=$dato[cod_revista]'>Anteriores Revistas</a></li>
+      <li><a href='index.php?a=$dato[cod_revista]'>Revistas Anteriores</a></li>
     </ul>
     <ul class='nav navbar-nav'>
       <li><a href='contacto.php'>Contacto</a></li>
