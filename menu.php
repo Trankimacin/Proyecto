@@ -16,6 +16,12 @@
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='js/estilos.js'></script>
 
+<style>
+.form-group {
+  width: initial;
+}
+</style>
+
 <?php
 
   require_once('conexion.php');
@@ -47,13 +53,13 @@ echo ("
     </div>
     <div class='collapse navbar-collapse' id='myNavbar'>
 		<ul class='nav navbar-nav'>
-			<li><a href='revista.php'>Revistas</a></li>
+			<li><a href='index.php'>Revistas</a></li>
 		</ul>
 		<ul class='nav navbar-nav'>
-			<li><a href='revista.php?u=$dato2[cod_revista]'>Última Revista</a></li>
+			<li><a href='index.php?u=$dato2[cod_revista]'>Última Revista</a></li>
 		</ul>
     <ul class='nav navbar-nav'>
-      <li><a href='revista.php?a=$dato[cod_revista]'>Anteriores Revistas</a></li>
+      <li><a href='index.php?a=$dato[cod_revista]'>Anteriores Revistas</a></li>
     </ul>
     <ul class='nav navbar-nav'>
       <li><a href='contacto.php'>Contacto</a></li>
