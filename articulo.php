@@ -45,6 +45,7 @@
 			<div class='container'>
 				<div class='row'>
 					<div class='col-md-9'>
+
 		");
 		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
@@ -52,7 +53,19 @@
 							<h1 class='text-center text-danger'>".$dato['titulo']."</h1>
 						</div>
 						<div class='col-md-12'>
-							<img class='centrada' src='media/img/articulos/".$dato['ruta']."' alt='Articulo'>
+							<img class='centrada' src='media/img/articulos/".$dato['ruta']."' data-toggle='modal' data-target='#grande' alt='Articulo'>
+							<div class='modal fade' id='grande' role='dialog'>
+								<div class='modal-dialog modal-lg'>
+									<div class='modal-content'>
+										<div class='modal-body'>
+											<img class='peque' src='media/img/articulos/$dato[ruta]'>
+										</div>
+										<div class='modal-footer'>
+											<button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>
+										</div>
+									</div>
+								</div>
+							</div>							
 						</div>
 						<div class='col-md-8 col-md-offset-3'>
 							<p class='text-justify'>".$dato['entradilla']."</p>
