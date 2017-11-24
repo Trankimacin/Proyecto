@@ -21,7 +21,7 @@
 			echo ("
 						<div class='col-md-4'>
 							<div class='thumbnail'>
-						        <a href='articulo.php?ar=".$dato['cod_articulo']."'><img src='media/img/portadas/".$dato['ruta']."' alt='Imagen'></a>
+						        <a href='articulo.php?ar=".$dato['cod_articulo']."'><img src='media/img/articulos/".$dato['ruta']."' alt='Imagen'></a>
 						        <div class='caption text-center'>
 						          <h3>Título: ".$dato['titulo']."</h3>
 						        </div>
@@ -45,21 +45,20 @@
 			<div class='container'>
 				<div class='row'>
 					<div class='col-md-9'>
-						<h2 class='text-center text-danger'>Artículo</h2>
 		");
 		while($dato=mysqli_fetch_array($resultado)){
 			echo ("
-						<div class='col-md-3'>
-							<img src='media/img/articulos/".$dato['ruta']."' alta='Articulo'>
-						</div>
-						<div class='col-md-6'>
-							<h2 class='text-center text-danger'>".$dato['titulo']."</h2>
+						<div class='col-md-12'>
+							<h1 class='text-center text-danger'>".$dato['titulo']."</h1>
 						</div>
 						<div class='col-md-12'>
-							<p>".$dato['entradilla']."</p>
+							<img class='centrada' src='media/img/articulos/".$dato['ruta']."' alt='Articulo'>
 						</div>
-						<div class='col-md-12'>
-							<p>".$dato['texto']."</p>
+						<div class='col-md-8 col-md-offset-3'>
+							<p class='text-justify'>".$dato['entradilla']."</p>
+						</div>
+						<div class='col-md-8 col-md-offset-3'>
+							<p class='text-justify'>".$dato['texto']."</p>
 						</div>
 						<div class='col-md-12'>
 							<h4 class='text-center text-danger'>".$dato['nombre']." ".$dato['apellidos']."</h4>
