@@ -7,9 +7,6 @@
     color:#ddd;
     min-height:100px;
     padding:20px 0;
-    bottom: 0;
-    position: relative;
-    width: 100%;
 }
 
 .pie .nav>li>a {
@@ -39,4 +36,33 @@
     height: 70px;
     font-size: 27px;
     padding: 10px;
+}
+.form-group {
+    width: 100%;
+}
+
+.lista {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.lista li {
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+}
+
+.lista li:last-child {
+  border: none;
+}
+
+.lista li a {
+  text-decoration: none;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+}
+
+.lista li a:hover {
+  font-size: 1.5em;
+  background: #f6f6f6;
 }
