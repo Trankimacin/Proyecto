@@ -42,3 +42,12 @@ function checkOption(obj) {
      input2[i].disabled = !(obj.value == "vacio")
     }
 }
+
+function comprobar(){
+	var buscar = document.getElementById('buscar').value;
+	if(buscar.length<3){
+		alert("Mínimo 3 letras para buscar el autor");
+		return false;
+	}
+	return true;
+}

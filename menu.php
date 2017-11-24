@@ -65,9 +65,9 @@ echo ("
       <li><a href='contacto.php'>Contacto</a></li>
     </ul>
       	<ul class='nav navbar-nav navbar-right'>
-        	<form class='navbar-form navbar-left' role='search' action='buscar.php' method='post'>
+        	<form class='navbar-form navbar-left' role='search' action='buscar.php' method='post' onsubmit='return comprobar();'>
 		  		<div class='form-group'>
-		    		<input type='text' name='buscar' class='form-control' placeholder='Buscar autor'>
+		    		<input type='text' name='buscar'id='buscar' class='form-control' placeholder='Buscar autor'>
 		  		</div>
 		  		<button type='submit' class='btn btn-danger'>Buscar</button>
 			</form>
