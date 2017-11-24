@@ -1,6 +1,5 @@
 
 <!-- Empieza el pie de la página -->
-
 <footer class="pie">
     <div class="container">
         <div class="row">
