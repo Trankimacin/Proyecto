@@ -4,7 +4,7 @@
 
 	require_once("conexion.php");
 
-	$consulta = "SELECT * FROM articulos ORDER BY cod_articulo DESC LIMIT 5;";
+	$consulta = "SELECT * FROM articulos ORDER BY cod_articulo DESC LIMIT 10;";
 
 	$resultado = mysqli_query($conexion, $consulta);
 
