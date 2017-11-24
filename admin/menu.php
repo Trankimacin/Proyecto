@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Huamns -->
+<link type="text/plain" rel="author" href="http://domain/humans.txt" />
 <!-- FavIcon -->
 <link rel="icon" type="img/png" href="../favicon.ico">
 <!-- CSS -->
