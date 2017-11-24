@@ -27,12 +27,12 @@
                         <legend class='text-center header'>Contacta con nosotros</legend>
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='fname' name='nombre' type='text' placeholder='Nombre' class='form-control' required>
+                                <input id='nombre' name='nombre' type='text' placeholder='Nombre' class='form-control' required>
                             </div>
                         </div>
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='lname' name='apellidos' type='text' placeholder='Apellidos' class='form-control' required>
+                                <input id='apellidos' name='apellidos' type='text' placeholder='Apellidos' class='form-control' required>
                             </div>
                         </div>
 
@@ -44,13 +44,13 @@
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <input id='phone' name='telefono' type='text' placeholder='Teléfono' class='form-control' required>
+                                <input id='teleno' name='telefono' type='text' placeholder='Teléfono' class='form-control' required>
                             </div>
                         </div>
 
                         <div class='form-group'>
                             <div class='col-md-10 col-md-offset-1'>
-                                <textarea class='form-control' id='message' maxlength="300" name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7' required></textarea>
+                                <textarea class='form-control' id='mensaje' maxlength="300" name='mensaje' placeholder='Pon tu mensaje aquí.' rows='7' required></textarea>
                                 <span class="help-block text-center" id="ayuda" style="display: none;">Máximo 300 carácteres</span>
                                 <script>
                                     $('textarea').focus(function(){
