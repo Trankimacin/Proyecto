@@ -3,10 +3,10 @@ function validar(){
 	var pass1 = document.getElementById("pass_1").value;
 	var pass2 = document.getElementById("pass_2").value;
 	if(pass1.length < 8){
-		alert("La contraseña debe tener 8 caracteres");
+		alert("La password debe tener 8 caracteres");
 		return false;
 	}else if(pass1!=pass2){
-		alert("Las contraseñas no coinciden");
+		alert("Las passwords no coinciden");
 		return false;
 	}
 	return true;
@@ -47,7 +47,7 @@ function checkOption(obj) {
 function comprobar(){
 	var buscar = document.getElementById('buscar').value;
 	if(buscar.length<3){
-		alert("Mínimo 3 letras para buscar el autor");
+		alert("Minimo 3 letras para buscar el autor");
 		return false;
 	}
 	return true;

@@ -80,8 +80,8 @@
 
 		$cod_articulo = $_POST['desplegable'];
 
-		echo ("	
-		</div>
+		echo ("
+		<div class='container'>
 			<form name='formulario' class='form-horizontal' action='modificarArticulos.php' method='post' enctype='multipart/form-data'>
 				<fieldset>
 				<legend>Modificar Articulo
