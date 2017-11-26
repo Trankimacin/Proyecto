@@ -9,7 +9,7 @@ session_start();
 
 			session_destroy();
 
-			header("Location:login.php?m=e");
+			header("Location:index.php?m=e");
 		}
 	}
 ?>

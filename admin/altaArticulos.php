@@ -55,7 +55,7 @@
 					   	<div class='alert alert-success fade in'>
 					      <a href='' class='close' data-dismiss='alert'>&times;</a>
 					      <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
-					      Se ha añadido correctamente
+					      Se ha a&ntilde;adido correctamente
 						</div>
 					");
 				}else{
@@ -63,7 +63,7 @@
 						<div class='alert alert-danger fade in'>
 							<a href='' class='close' data-dismiss='alert'>&times;</a>
 							<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-							No se ha podido añadir
+							No se ha podido a&ntilde;adir
 						</div>
 					");
 				}
@@ -73,16 +73,17 @@
 	}
 
 ?>
+<div class='container'>
 
 	<form class="form-horizontal" name="revista" action="altaArticulos.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
 		<fieldset>
-			<legend>Añadir nuevo articulo
+			<legend>A&ntilde;adir nuevo articulo
 				<a href='#' data-trigger='focus' data-toggle='titulo' data-content='Primero debe tener creada una revista' class='glyphicon glyphicon-cog'></a>
 			</legend>
 
 		<!-- Titutlo -->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="titulo">Título</label>
+			<label class="col-md-4 control-label" for="titulo">T&iacute;tulo</label>
 			<div class="col-md-4">
 				<input type="text" id="titulo" name="titulo" class="form-control input-md" required>
 			</div>
@@ -93,7 +94,7 @@
 			<label class="col-md-4 control-label" for="entradilla">Entradilla</label>
 			<div class="col-md-4">
 				<textarea maxlength="250" class="form-control" id="entradilla" name="entradilla" required></textarea>
-				<span class='help-block'>Máximo 250 caracteres</span>
+				<span class='help-block'>M&aacute;ximo 250 caracteres</span>
 			</div>
 		</div>
 
@@ -117,7 +118,7 @@
 
 	while($dato=mysqli_fetch_array($resultado)){
 		echo ("
-			<option value='".$dato['cod_revista']."'>Número: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
+			<option value='".$dato['cod_revista']."'>N&uacute;mero: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
 		");
 	}
 ?>
@@ -156,7 +157,7 @@
 
 		<div class="container">
 		    <div class="row medio">
-		        <h4>Nuevo Autor <a href='#' data-trigger='focus' data-toggle='nuevo' data-content='Desde aquí crearemos un nuevo Autor' class='glyphicon glyphicon-cog'></a></h4>
+		        <h4>Nuevo Autor <a href='#' data-trigger='focus' data-toggle='nuevo' data-content='Desde aqu&iacute; crearemos un nuevo Autor' class='glyphicon glyphicon-cog'></a></h4>
 		    </div>
 		</div>
 			<!-- Nombre Nuevo Autor -->
@@ -179,13 +180,13 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label"></label>
 			<div class="col-md-8">
-				<button class="btn btn-success">Añadir</button>
+				<button class="btn btn-success">A&ntilde;adir</button>
 				<button class="btn btn-danger">Borrar</button>
 			</div>
 		</div>
 	</fieldset>
 </form>
-
+</div>
 <script>
 $(document).ready(function(){
     $('[data-toggle="titulo"]').popover();   

@@ -20,7 +20,7 @@
 					<div class='alert alert-success fade in'>
 						<a href='' class='close' data-dismiss='alert'>&times;</a>
 						<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
-						Se ha añadido correctamente
+						Se ha a&ntilde;adido correctamente
 					</div>
 			");
 		}else{
@@ -36,11 +36,11 @@
 	}
 
 ?>
-  
+<div class='container'>
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Añadir un usuario</h4>
+				<h4 class="modal-title">A&ntilde;adir un usuario</h4>
 			</div><!-- Termina la cabecera -->
 			<div class="modal-body">
 				<form action="altaUsuario.php" method="post" onsubmit="return validar();">
@@ -61,10 +61,11 @@
 							<input type="password" name="pass_2" class="form-control" id="pass_2" placeholder="Password"/>
 							<label for="pass_2" class="input-group-addon glyphicon glyphicon-lock"></label>
 						</div>
-						<span id="helpBlock" class="help-block">Deben coincidir las contraseña</span>
+						<span id="helpBlock" class="help-block">Deben coincidir las contrase&ntilde;a</span>
 					</div><!--Termina el DIV de la segunda password-->
 					<button class="form-control btn btn-success">Registrar</button>
 				</form>
 			</div><!--Termina el body-->
 		</div><!--Termina el modal-content-->
 	</div><!--Termina el div para el formulario-->
+</div>

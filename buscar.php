@@ -6,7 +6,6 @@
 		<div class='container'>
 			<div class='row'>
 				<div class='col-md-9'>
-					<h2 class='text-center text-danger'>Resultados de la búsqueda</h2>
 	");
 
 	if(isset($_POST['buscar'])){
@@ -34,11 +33,12 @@
 					<div class='alert alert-danger fade in'>
 						<a href='' class='close' data-dismiss='alert'>&times;</a>
 						<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-						No hay ningún autor llamado así
+						Se han encontrado $tuplas resutados
 					</div>
 					</div>
 				");
 			}else{
+				echo ("<h2 class='text-center text-danger'>Resultados de la búsqueda</h2>");
 				$fila = mysqli_fetch_assoc($resultado);
 
 				$cod_autor = $fila['cod_autor'];
@@ -53,8 +53,8 @@
 							<div class='thumbnail'>
 								<a href='articulo.php?ar=".$dato['cod_articulo']."'><img src='media/img/articulos/".$dato['ruta']."' alt='Imagen'></a>
 								<div class='caption text-center'>
-						        	<h3>Título: ".$dato['titulo']."</h3>
-						        	<p>Nombre: ".$dato['nombre']." Apellidos: ".$dato['apellidos']."</p>
+						        	<h3>".$dato['titulo']."</h3>
+						        	<p>Autor: ".$dato['nombre']." ".$dato['apellidos']."</p>
 						        </div>
 							</div>
 						</div>

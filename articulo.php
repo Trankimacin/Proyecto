@@ -23,7 +23,7 @@
 							<div class='thumbnail'>
 						        <a href='articulo.php?ar=".$dato['cod_articulo']."'><img src='media/img/articulos/".$dato['ruta']."' alt='Imagen'></a>
 						        <div class='caption text-center'>
-						          <h3>Título: ".$dato['titulo']."</h3>
+						          <h3>".$dato['titulo']."</h3>
 						        </div>
 						      </div>
 						    </div>
@@ -67,14 +67,14 @@
 								</div>
 							</div>							
 						</div>
-						<div class='col-md-8 col-md-offset-3'>
-							<p class='text-justify'>".$dato['entradilla']."</p>
+						<div class='col-md-12'>
+							<p class='text-justify'><i>".$dato['entradilla']."</i></p>
 						</div>
-						<div class='col-md-8 col-md-offset-3'>
+						<div class='col-md-12'>
 							<p class='text-justify'>".$dato['texto']."</p>
 						</div>
 						<div class='col-md-12'>
-							<h4 class='text-center text-danger'>".$dato['nombre']." ".$dato['apellidos']."</h4>
+							<h4 class='text-center text-danger'>Autor: ".$dato['nombre']." ".$dato['apellidos']."</h4>
 						</div>
 					</div>
 			");

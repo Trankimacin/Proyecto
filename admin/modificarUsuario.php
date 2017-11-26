@@ -44,6 +44,7 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
+			<div class='container'>
 				<div class='modal-dialog'>
 					<div class='modal-content'>
 						<div class='modal-header'>
@@ -74,7 +75,7 @@
 									<input type='password' name='pass_2' class='form-control' id='pass_2' placeholder='Password'/>
 									<label for='pass_2' class='input-group-addon glyphicon glyphicon-lock'></label>
 								</div>
-								<span id='helpBlock' class='help-block'>Deben coincidir las contraseñas</span>
+								<span id='helpBlock' class='help-block'>Deben coincidir las contrase&ntilde;as</span>
 							</div><!--Termina el DIV de la segunda password-->
 			");
 		}
@@ -84,6 +85,7 @@
 					</div><!--Termina el body-->
 				</div><!--Termina el modal-content-->
 			</div><!--Termina el div para el formulario-->
+		</div>
 			");
 	}else{
 
@@ -91,6 +93,7 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
+		<div class='container'>
 			<div class='modal-dialog'>
 				<div class='modal-content'>
 					<div class='modal-header'>
@@ -117,6 +120,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		");
 	}
 

@@ -20,7 +20,7 @@
 			    <div class='alert alert-success fade in'>
 			      <a href='' class='close' data-dismiss='alert'>&times;</a>
 			      <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
-			      Se ha añadido correctamente
+			      Se ha a&ntilde;adido correctamente
 			  	</div>
 			");
 		}else{
@@ -28,18 +28,18 @@
 			  <div class='alert alert-danger fade in'>
 			      <a href='' class='close' data-dismiss='alert'>&times;</a>
 			      <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-			      No se ha podido añadir
+			      No se ha podido a&ntilde;adir
 			  </div>
 			");
 		}
 	}
 
 ?>
-
+<div class='container'>
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Añadir un autor</h4>
+				<h4 class="modal-title">A&ntilde;adir un autor</h4>
 			</div><!-- Termina la cabecera -->
 			<div class="modal-body">
 				<form action="altaAutores.php" method="post">
@@ -51,13 +51,14 @@
 					</div><!-- Termina el DIV de usuario-->
 					<div class="form-group">
 						<div class="input-group">
-							<input type="text" class="form-control" name="apllidos" id="apellidos" placeholder="Apellidos"/>
+							<input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos"/>
 							<label for="apellidos" class="input-group-addon glyphicon glyphicon-font"></label>
 						</div>
 					</div>
 
-					<button class="form-control btn btn-success">Añadir</button>
+					<button class="form-control btn btn-success">A&ntilde;adir</button>
 				</form>
 			</div><!--Termina el body-->
 		</div><!--Termina el modal-content-->
 	</div><!--Termina el div para el formulario-->
+</div>

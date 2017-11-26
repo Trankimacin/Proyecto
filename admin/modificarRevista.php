@@ -76,7 +76,7 @@
 						");
 					}
 				}else{
-					echo ("<h2>No se pudo hacer la modificación</h2>");
+					echo ("<h2>No se pudo hacer la modificaci&oacute;n</h2>");
 				}
 
   			}
@@ -92,6 +92,7 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
+		<div class='container'>
 			<form name='formulario' class='form-horizontal' action='modificarRevista.php' method='post' enctype='multipart/form-data'>
 			<fieldset>
 			<legend>Modificar Revista</legend>
@@ -103,13 +104,13 @@
 			echo ("
 				<input type='hidden' name='cod_revista' value='".$dato['cod_revista']."'>
 				<div class='form-group'>
-					<label class='col-md-4 control-label' for='numero'>Número de revista</label>
+					<label class='col-md-4 control-label' for='numero'>N&uacute;mero de revista</label>
 					<div class='col-md-4'>
 						<input id='numero' name='numero' type='number' class='form-control input-md' value='".$dato['numero']."'>
 					</div>
 				</div>
 				<div class='form-group'>
-					<label class='col-md-4 control-label' for='fecha'>Fecha de publicación</label>
+					<label class='col-md-4 control-label' for='fecha'>Fecha de publicaci&oacute;n</label>
 					<div class='col-md-4'>
 						<input type='text' id='fecha' name='fecha' class='form-control input-md' value='".$dato['fecha']."'>
 					</div>
@@ -159,6 +160,7 @@
 				</div>
 				</fieldset>
 				</form>
+			</div>
 			");
 	}else{
 
@@ -166,13 +168,14 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
+		<div class='container'>
 			<div class='modal-dialog'>
 				<div class='modal-content'>
 					<div class='modal-header'>
 						<h4 class='modal-title'>Modificar revista</h4>
 					</div>
 					<div class='modal-body'>
-						<form action='modificarREvista.php' method='post' onsubmit='return seleccionado();'>
+						<form action='modificarRevista.php' method='post' onsubmit='return seleccionado();'>
 							<div class='form-group'>
 								<select id='selec' name='desplegable'>
 									<option value='vacio' selected>Selecciona una revista</option>
@@ -191,6 +194,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		");
 	}
 

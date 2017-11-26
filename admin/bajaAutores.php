@@ -37,6 +37,7 @@
 	$resultado = mysqli_query($conexion, $consulta);
 
 	echo ("
+	<div class='container'>
 		<div class='modal-dialog'>
 			<div class='modal-content'>
 				<div class='modal-header'>
@@ -63,6 +64,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	");
 
 ?>

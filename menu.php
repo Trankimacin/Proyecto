@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang='es'>
 <head>
-  <title></title>
-  <meta charset='utf-8'>
+  <title>Revista Coches</title>
+  <meta charset="utf-8">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 <!-- Humans -->
@@ -47,7 +47,7 @@ echo ("
 <nav class='navbar navbar-inverse'>
   	<div class='container-fluid'>
     	<div class='navbar-header'>
-      	<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+      	<button type='button' class='navbar-toggle pull-left' data-toggle='collapse' data-target='#myNavbar'>
         	<span class='icon-bar'></span>
         	<span class='icon-bar'></span>
         	<span class='icon-bar'></span>                        
@@ -58,7 +58,7 @@ echo ("
 			<li><a href='index.php'>Revistas</a></li>
 		</ul>
 		<ul class='nav navbar-nav'>
-			<li><a href='index.php?u=$dato2[cod_revista]'>Última Revista</a></li>
+			<li><a href='index.php?u=$dato2[cod_revista]'>&Uacute;ltima Revista</a></li>
 		</ul>
     <ul class='nav navbar-nav'>
       <li><a href='index.php?a=$dato[cod_revista]'>Revistas Anteriores</a></li>

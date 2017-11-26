@@ -20,7 +20,7 @@
 	while($dato=mysqli_fetch_array($resultado)){
 		echo("
 								<ul>
-									<li><a href='articulo.php?re=$dato[cod_revista]'>Revista Coches - Número: $dato[numero] Fecha: $dato[fecha]</a></li>
+									<li><a href='articulo.php?re=$dato[cod_revista]'>Revista Coches - N&uacute;mero: $dato[numero] Fecha: $dato[fecha]</a></li>
 								</ul>
 		");
 	}
@@ -32,7 +32,7 @@
 	$resultado = mysqli_query($conexion, $consulta);
 
 	$dato = mysqli_fetch_array($resultado);
-				echo ("		<li><a href='index.php?u=$dato[cod_revista]'>Última revista</a></li>");
+				echo ("		<li><a href='index.php?u=$dato[cod_revista]'>&Uacute;ltima revista</a></li>");
 
 ?>
 <?php
@@ -46,7 +46,7 @@
 							<li><a>Articulos</a></li>
 <?php
 
-	$consulta = "SELECT * FROM revistas, articulos WHERE revistas.publicada=1 AND revistas.cod_revista=articulos.cod_revista LIMIT 30;";
+	$consulta = "SELECT * FROM revistas, articulos WHERE revistas.publicada=1 AND revistas.cod_revista=articulos.cod_revista;";
 
 	$resultado = mysqli_query($conexion, $consulta);
 

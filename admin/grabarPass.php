@@ -16,7 +16,7 @@
 			header("Location:altaRevista.php?mensaje=ok");
 		} else {
 			session_destroy();
-			header("Location:login.php?mensaje=error2");
+			header("Location:index.php?mensaje=error2");
 		}
 
 ?>

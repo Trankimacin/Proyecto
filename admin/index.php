@@ -16,7 +16,7 @@
               <div class='alert alert-danger fade in'>
                   <a href='' class='close' data-dismiss='alert'>&times;</a>
                   <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-                  Usuario y/o Contraseña no valida
+                  Usuario y/o Contrase&ntilde;a no valida
               </div>
         ");
 		}else if($_GET['m']=='e'){
@@ -24,7 +24,7 @@
               <div class='alert alert-warning fade in'>
                   <a href='' class='close' data-dismiss='alert'>&times;</a>
                   <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>
-                  La sesión ha caducado por tiempo
+                  La sesi&oacute;n ha caducado por tiempo
               </div>
       ");
 		}
@@ -33,7 +33,7 @@
 	?>
 
 
-
+<div class='container'>
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -63,6 +63,7 @@
       </div> <!-- /.modal-body -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
+</div>
 
 </body>
 </html>

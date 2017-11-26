@@ -2,10 +2,10 @@
 
 	if (isset($_POST["enviar_btn"])){
 
-		$servidor = "localhost";
-		$usuario  = "root";
-		$password = "root";
-		$bbdd     = "proyecto";
+	$servidor = "localhost";
+	$usuario  = "root";
+	$password = "root";
+	$bbdd     = "proyecto";
 
 		$conexion = mysqli_connect($servidor, $usuario, $password);
 
@@ -33,11 +33,11 @@
 			}
 		} else {
 
-			header("Location:login.php?m=w");
+			header("Location:index.php?m=w");
 		}
 
 	}else{
 
-		header("Location:login.php");
+		header("Location:index.php");
 	}
 ?>

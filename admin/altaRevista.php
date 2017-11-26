@@ -35,7 +35,7 @@
 					    <div class='alert alert-success fade in'>
 						      <a href='' class='close' data-dismiss='alert'>&times;</a>
 						      <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
-						      Revista añadida correctamente
+						      Revista a&ntilde;adida correctamente
 						  </div>
 					");
 				}else{
@@ -43,27 +43,28 @@
 						  <div class='alert alert-danger fade in'>
 						      <a href='' class='close' data-dismiss='alert'>&times;</a>
 						      <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-						      No se ha podido añadir la revista
+						      No se ha podido a&ntilde;adir la revista
 						  </div>
 					");
 				}
 			}else{
-				echo ("<h2>No se ha podido hacer la inserción</h2>");
+				echo ("<h2>No se ha podido hacer la inserci&oacute;n</h2>");
 			}
 		}
 	}
 
 ?>
 
+<div class='container'>
 
 <form class='form-horizontal' name='revista' action="altaRevista.php" method="post" enctype="multipart/form-data" onsubmit="return subido();">
 
 	<fieldset>
-		<legend>Añadir Revista</legend>
+		<legend>A&ntilde;adir Revista</legend>
 
 		<!--Número de revista-->
 		<div class='form-group'>
-			<label class='col-md-4 control-label' for='numero'>Número de revista</label>
+			<label class='col-md-4 control-label' for='numero'>N&uacute;mero de revista</label>
 			<div class='col-md-4'>
 				<input id='numero' name='numero' type='number' class='form-control input-md' required>
 			</div>
@@ -71,7 +72,7 @@
 
 		<!--Fecha-->
 		<div class='form-group'>
-			<label class='col-md-4 control-label' for='fecha'>Fecha de publicación</label>
+			<label class='col-md-4 control-label' for='fecha'>Fecha de publicaci&oacute;n</label>
 			<div class='col-md-4'>
 				<input type='text' id='fecha' name='fecha' class='form-control input-md' required>
 			</div>
@@ -89,9 +90,10 @@
 		<div class='form-group'>
 			<label class='col-md-4 control-label'></label>
 			<div class='col-md-8'>
-				<button class='btn btn-success'>Añadir</button>
+				<button class='btn btn-success'>A&ntilde;adir</button>
 				<button class='btn btn-danger'>Borrar</button>
 			</div>
 		</div>
 	</fieldset>
 </form>
+</div>

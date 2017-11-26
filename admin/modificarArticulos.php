@@ -81,6 +81,7 @@
 		$cod_articulo = $_POST['desplegable'];
 
 		echo ("	
+		</div>
 			<form name='formulario' class='form-horizontal' action='modificarArticulos.php' method='post' enctype='multipart/form-data'>
 				<fieldset>
 				<legend>Modificar Articulo
@@ -118,7 +119,7 @@
 
 	while($dato=mysqli_fetch_array($resultado)){
 		echo ("
-							<option value='".$dato['cod_revista']."'>Número: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
+							<option value='".$dato['cod_revista']."'>N&uacute;mero: ".$dato['numero']." Fecha: ".$dato['fecha']."</option>
 		");
 	}
 		echo ("
@@ -161,7 +162,7 @@
 				</div>
 			</fieldset>
 		</form>
-
+	</div>
 		");
 
 	}else{
@@ -170,6 +171,7 @@
 		$resultado = mysqli_query($conexion, $consulta);
 
 		echo ("
+		<div class='container'>
 			<div class='modal-dialog'>
 				<div class='modal-content'>
 					<div class='modal-header'>
@@ -195,6 +197,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		");
 	}
 

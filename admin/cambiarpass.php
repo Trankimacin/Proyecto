@@ -29,11 +29,11 @@ function validar(){
 <!-- JavaScript -->
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
-
+<div class='container'>
 	<div class='modal-dialog'>
 		<div class='modal-content'>
 			<div class='modal-header'>
-				<h4 class='modal-title'>Selecciona una nueva contraseña</h4>
+				<h4 class='modal-title'>Selecciona una nueva contrase&ntilde;a</h4>
 			</div><!-- Termina la cabecera -->
 			<div class='modal-body'>
 				<form action='grabarPass.php' method='post' onsubmit='return validar();'>
@@ -48,10 +48,11 @@ function validar(){
 							<input type='password' name='pass_2' class='form-control' id='pass_2' placeholder='Password'/>
 							<label for='pass_2' class='input-group-addon glyphicon glyphicon-lock'></label>
 						</div>
-						<span id='helpBlock' class='help-block'>Deben coincidir las contraseñas</span>
+						<span id='helpBlock' class='help-block'>Deben coincidir las contrase&ntilde;as</span>
 					</div><!--Termina el DIV de la segunda password-->
 					<button class='form-control btn btn-warning'>Modificar</button>
 				</form>
 			</div><!--Termina el body-->
 		</div><!--Termina el modal-content-->
 	</div><!--Termina el div para el formulario-->
+</div>
