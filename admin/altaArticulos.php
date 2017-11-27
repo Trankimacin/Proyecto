@@ -181,7 +181,6 @@
 			<label class="col-md-4 control-label"></label>
 			<div class="col-md-8">
 				<button class="btn btn-success">A&ntilde;adir</button>
-				<button class="btn btn-danger">Borrar</button>
 			</div>
 		</div>
 	</fieldset>
