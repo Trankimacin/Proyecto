@@ -85,10 +85,10 @@
                 <div class='panel panel-default'>
                     <div class='text-center header'>Revista Coches</div>
                     <div class='panel-body text-center'>
-                        <h4>Revista Coches</h4>
+                        <h4>Direcci&oacute;n</h4>
                         <div>Antonio Lopez, 28</div>
-                        <div>Madrid, Espa&ntilde;a</div>
-                        <div>revista@revista.com</div>
+                        <div>Madrid, Espa&ntilde;a</div>    
+                        <div>revista@coches.com</div>
                         <hr />
                         <div id='map1' class='map'>
                         </div>
