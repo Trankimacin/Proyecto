@@ -1,10 +1,12 @@
-/* TEAM */
+﻿/* TEAM */
 
-	Developer: Víctor Ramón Pardo
+	Developer: Victor Ramon Pardo
+	Site: http://vrweb.webcindario.com
 	Location: Madrid, Madrid, Spain
 
 /* SITE */
 
-	Last Update:
+	Last Update: 2017/11/27
 	Standars: HTML5, CSS3, JavaScript, PHP
-	Software: Sublime Text, PhpStorm, WebStorm, IntelliJ IDEA, GitHub
+	Components: jQuery
+	Software: Sublime Text 3, PhpStorm, IntelliJ IDEA, GitHub, XAMP, MAMP, Bootstrap 3.3.7
