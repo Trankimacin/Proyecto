@@ -73,6 +73,12 @@
   margin: auto;
   width: 50%;
   margin-bottom: 5%;
+  cursor: zoom-in;
+  opacity: 1;
+}
+
+.centrada:hover {
+  opacity: .7;
 }
 
 .peque{
