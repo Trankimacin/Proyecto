@@ -1,7 +1,7 @@
 <?php
     include_once("menu.php");
     if(isset($_POST['enviar'])){
-        $destino = 'seguimiento_practicas@hotmail.com';
+        $destino = 'correo@dominio.com';
         $asunto = "Mensaje enviado por: ".$_POST['nombre'];
         $remitente = $_POST['email'];
         $mensaje = 'Formulario de contacto de la revista';
